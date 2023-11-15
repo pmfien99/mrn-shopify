@@ -1,0 +1,66 @@
+{
+  "type": "footer",
+  "name": "t:static_sections.footer.name",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-block-customer-support-1": {
+          "type": "customer_support",
+          "settings": {
+            "title": "Contact Us",
+            "customer_support_img_width": 220,
+            "customer_support_offset_right": 30,
+            "customer_support_offset_bottom": 0,
+            "extra_customer_support": "<p>101 Old Trolley Road<\/p><p>Summerville, SC 29485<\/p><p>Store Hours: Daily 11am-7pm<\/p><p><\/p><p><\/p>",
+            "show_phone_link": true,
+            "show_mail_link": true,
+            "show_whatsapp_link": false,
+            "customer_support_offset_right_mobile": 0,
+            "customer_support_offset_bottom_mobile": 0
+          }
+        },
+        "footer-block-socials-newsletter-1": {
+          "type": "socials_newsletter",
+          "settings": {
+            "title": "Follow Us",
+            "show_socials": true,
+            "enable_follow_on_shop": false,
+            "show_newsletter": true,
+            "footer_button_color": "accent",
+            "enable_newsletter_terms_checkbox": false,
+            "newsletter_terms_text": ""
+          }
+        },
+        "ef881740-8888-4e02-a256-61bec6f077d9": {
+          "type": "text",
+          "settings": {
+            "title": "Information",
+            "text": "<p><a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Terms & Conditions<\/a><\/p><p><a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">Privacy Policy<\/a><\/p><p><a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">Refund Policy<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "footer-block-customer-support-1",
+        "footer-block-socials-newsletter-1",
+        "ef881740-8888-4e02-a256-61bec6f077d9"
+      ],
+      "settings": {
+        "footer_color": "white",
+        "bottom_color": "light",
+        "bottom_img_width": 50,
+        "bottom_img_link": "",
+        "bottom_svg_img": "",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_follow_on_shop": false,
+        "show_payment_methods": true,
+        "spacing_desktop": 0,
+        "spacing_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

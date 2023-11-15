@@ -1,0 +1,393 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{%- liquid
+  if section.settings.title_size == 'size-50'
+    assign title_classes = section.settings.title_size | append: ' mobile-size-' | append: settings.mobile_font_size | remove: 'px'
+    assign title_size = 'h1'
+  else
+    assign title_classes = false
+    assign title_size = section.settings.title_size
+  endif
+
+  assign show_banner = true
+  assign start_time = section.settings.countdown_start | default: "now" | date: '%s'
+  assign end_time = section.settings.countdown_end | date: '%s'
+  assign now =  "now" | date: '%s'
+
+  if now > end_time and section.settings.hide_banner_after_countdown == true
+    assign show_banner = false
+  elsif start_time > now
+    assign show_banner = false
+  endif
+-%}
+{%- if show_banner -%}
+  <article class="palette-{{ section.settings.color_palette }}
+    module-color-palette
+    m6cu
+    text-{{ section.settings.text_position }}
+    {{ section.settings.width }}
+    size-{{ section.settings.height }}
+    ">
+    <figure class="background plain">
+      <span class="img-overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }}"></span>
+      {%- if section.settings.video -%}
+        {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+      {%- elsif section.settings.image %}
+        <picture>
+          <img
+            src="{{ 'placeholder-pixel.png' | asset_img_url }}"
+            data-src="{{ section.settings.image | image_url: height: 310, width: 1260 }}"
+            data-srcset="{% render 'image-srcset', image: section.settings.image, max_width: 2900 %}"
+            sizes="
+              100vw
+            "
+            width="1260"
+            height="310"
+            alt="{{ section.settings.image.alt | default: section.settings.title | escape }}"
+            style="object-position: {{ section.settings.image.presentation.focal_point }}"
+          >
+        {%- endif -%}
+        </picture>
+    </figure>
+    <header class="countdown-ended-hide {% if section.settings.title_size == 'size-50' %}size-18 mobile-size-14{% endif %}{% if now > end_time %} hidden{% endif %}">
+      {%- if section.settings.title != empty -%}
+        <{{ title_size }}{% if title_classes %} class="{{ title_classes }}"{% endif %}>{{ section.settings.title }}</{{ title_size }}>
+      {%- endif -%}
+      {%- if section.settings.text != empty -%}{{ section.settings.text }}{%- endif -%}
+    </header>
+    {%- unless section.settings.hide_banner_after_countdown %}
+      <header class="countdown-ended-show {% unless now > end_time %}hidden {% endunless %}{% if section.settings.title_size == 'size-50' %}size-18 mobile-size-14{% endif %}">
+        {%- if section.settings.ended_title != empty -%}
+          <{{ title_size }}{% if title_classes %} class="{{ title_classes }}"{% endif %}>{{ section.settings.ended_title }}</{{ title_size }}>
+        {%- endif -%}
+        {%- if section.settings.ended_text != empty -%}{{ section.settings.ended_text }}{%- endif -%}
+      </header>
+    {%- endunless -%}
+    <p class="countdown-container countdown"
+       data-show-from="{{ start_time | date: '%Y-%m-%d %H:%M %z' }}"
+       data-show-until="{{ end_time | date: '%Y-%m-%d %H:%M %z' }}"
+       data-show-days="1234567"
+       data-days="{{ 'general.countdown.days' | t }}"
+       data-day="{{ 'general.countdown.day' | t }}"
+       data-hours="{{ 'general.countdown.hours' | t }}"
+       data-hour="{{ 'general.countdown.hour' | t }}"
+       data-minutes="{{ 'general.countdown.minutes' | t }}"
+       data-minute="{{ 'general.countdown.minute' | t }}"
+       data-seconds="{{ 'general.countdown.seconds' | t }}"
+       data-second="{{ 'general.countdown.second' | t }}"
+      >
+      {{ section.settings.countdown_end | date: "%b %d, %Y %H:%M:%S" }}
+    </p>
+    {%- if section.settings.link_text != empty and section.settings.link_url != blank -%}
+      <p class="{% unless section.settings.show_link %} link-btn{% endunless %} button-palette-{{ section.settings.button_color_palette }}"><a href="{{ section.settings.link_url }}" {% if section.settings.show_link %}class="strong"{% endif %}>{{ section.settings.link_text }}{% if section.settings.show_link %}&nbsp;<i aria-hidden="true" class="icon-chevron-right"></i>{% endif %}</a></p>
+    {%- endif -%}
+    {%- if settings.banners_clickable and section.settings.link_url != blank -%}
+      <a class="link-overlay" href="{{ section.settings.link_url }}"></a>
+    {%- endif -%}
+  </article>
+
+  <style>
+    #shopify-section-{{ section.id }} .m6cu { margin-bottom: {{ section.settings.spacing_desktop }}px; }
+    #shopify-section-{{ section.id }} .m6cu .countdown { --bg: {{ section.settings.countdown_bg_color }}; --fg: {{ section.settings.countdown_text_color }}; }
+    @media only screen and (max-width: 47.5em) {
+      #shopify-section-{{ section.id }} .m6cu { margin-bottom: {{ section.settings.spacing_mobile }}px; }
+    }
+  </style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.countdown.name",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "t:sections.countdown.settings.image.label"
+    },
+    {
+      "id": "video",
+      "type": "video",
+      "label": "t:sections.countdown.settings.video.label"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:sections.countdown.settings.overlay_opacity.label",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "t:sections.countdown.settings.height.label",
+      "options": [
+        {
+          "value": "xs",
+          "label": "t:sections.countdown.settings.height.options__1.label"
+        },
+        {
+          "value": "s",
+          "label": "t:sections.countdown.settings.height.options__2.label"
+        },
+        {
+          "value": "m",
+          "label": "t:sections.countdown.settings.height.options__3.label"
+        },
+        {
+          "value": "l",
+          "label": "t:sections.countdown.settings.height.options__4.label"
+        }
+      ],
+      "default": "xs"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "t:sections.countdown.settings.width.label",
+      "options": [
+        {
+          "value": "boxed",
+          "label": "t:sections.countdown.settings.width.options__1.label"
+        },
+        {
+          "value": "wide",
+          "label": "t:sections.countdown.settings.width.options__2.label"
+        }
+      ],
+      "default": "boxed"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.countdown.settings.colors.header"
+    },
+    {
+      "id": "countdown_bg_color",
+      "type": "color",
+      "label": "t:sections.countdown.settings.colors.countdown_bg_color.label",
+      "default": "#EFB34C"
+    },
+    {
+      "id": "countdown_text_color",
+      "type": "color",
+      "label": "t:sections.countdown.settings.colors.countdown_text_color.label",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "color_palette",
+      "label": "t:sections.countdown.settings.colors.color_palette.label",
+      "options": [
+        {
+          "value": "white",
+          "label": "t:sections.countdown.settings.colors.color_palette.options__1.label"
+        },
+        {
+          "value": "black",
+          "label": "t:sections.countdown.settings.colors.color_palette.options__2.label"
+        },
+        {
+          "value": "light",
+          "label": "t:sections.countdown.settings.colors.color_palette.options__3.label"
+        },
+        {
+          "value": "dark",
+          "label": "t:sections.countdown.settings.colors.color_palette.options__4.label"
+        },
+        {
+          "value": "accent",
+          "label": "t:sections.countdown.settings.colors.color_palette.options__5.label"
+        },
+        {
+          "value": "light_2",
+          "label": "t:sections.countdown.settings.colors.color_palette.options__6.label"
+        },
+        {
+          "value": "light_gradient",
+          "label": "t:sections.countdown.settings.colors.color_palette.options__7.label"
+        },
+        {
+          "value": "dark_gradient",
+          "label": "t:sections.countdown.settings.colors.color_palette.options__8.label"
+        }
+      ],
+      "default": "dark"
+    },
+    {
+      "type": "select",
+      "id": "button_color_palette",
+      "label": "t:sections.countdown.settings.colors.button_color_palette.label",
+      "options": [
+        {
+          "value": "white",
+          "label": "t:sections.countdown.settings.colors.button_color_palette.options__1.label"
+        },
+        {
+          "value": "black",
+          "label": "t:sections.countdown.settings.colors.button_color_palette.options__2.label"
+        },
+        {
+          "value": "light",
+          "label": "t:sections.countdown.settings.colors.button_color_palette.options__3.label"
+        },
+        {
+          "value": "dark",
+          "label": "t:sections.countdown.settings.colors.button_color_palette.options__4.label"
+        },
+        {
+          "value": "accent",
+          "label": "t:sections.countdown.settings.colors.button_color_palette.options__5.label"
+        },
+        {
+          "value": "light_2",
+          "label": "t:sections.countdown.settings.colors.button_color_palette.options__6.label"
+        }
+      ],
+      "default": "accent"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.countdown.settings.content.header"
+    },
+    {
+      "id": "text_position",
+      "type": "select",
+      "label": "t:sections.countdown.settings.content.text_position.label",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:sections.countdown.settings.content.text_position.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.countdown.settings.content.text_position.options__2.label"
+        }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "t:sections.countdown.settings.content.title_size.label",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:sections.countdown.settings.content.title_size.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.countdown.settings.content.title_size.options__2.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.countdown.settings.content.title_size.options__3.label"
+        },
+        {
+          "value": "size-50",
+          "label": "t:sections.countdown.settings.content.title_size.options__4.label"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:sections.countdown.settings.content.title.label",
+      "default": "Countdown banner"
+    },
+    {
+      "id": "text",
+      "type": "richtext",
+      "label": "t:sections.countdown.settings.content.text.label",
+      "default": "<p>Tell something about your offers, sale or discounts.</p>"
+    },
+    {
+      "id": "link_text",
+      "type": "text",
+      "label": "t:sections.countdown.settings.content.link_text.label",
+      "info": "t:sections.countdown.settings.content.link_text.info",
+      "default": "Button"
+    },
+    {
+      "id": "link_url",
+      "type": "url",
+      "label": "t:sections.countdown.settings.content.link_url.label",
+      "default": "/collections"
+    },
+    {
+      "id": "show_link",
+      "type": "checkbox",
+      "label": "t:sections.countdown.settings.content.show_link.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.countdown.settings.countdown.header"
+    },
+    {
+      "id": "countdown_start",
+      "type": "text",
+      "label": "t:sections.countdown.settings.countdown.countdown_start.label",
+      "info": "t:sections.countdown.settings.countdown.countdown_start.info"
+    },
+    {
+      "id": "countdown_end",
+      "type": "text",
+      "label": "t:sections.countdown.settings.countdown.countdown_end.label",
+      "default": "December 31th, 11:59:59"
+    },
+    {
+      "id": "hide_banner_after_countdown",
+      "type": "checkbox",
+      "label": "t:sections.countdown.settings.countdown.hide_banner_after_countdown.label"
+    },
+    {
+      "id": "ended_title",
+      "type": "text",
+      "label": "t:sections.countdown.settings.countdown.ended_title.label",
+      "default": "Countdown banner"
+    },
+    {
+      "id": "ended_text",
+      "type": "richtext",
+      "label": "t:sections.countdown.settings.countdown.ended_text.label",
+      "default": "<p>Tell something about your offers, sale or discounts when the timer has ended.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.countdown.settings.spacing.header"
+    },
+    {
+      "id": "spacing_desktop",
+      "type": "range",
+      "label": "t:sections.countdown.settings.spacing.spacing_desktop.label",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "id": "spacing_mobile",
+      "type": "range",
+      "label": "t:sections.countdown.settings.spacing.spacing_mobile.label",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.countdown.presets.name"
+    }
+  ]
+}
+{% endschema %}
