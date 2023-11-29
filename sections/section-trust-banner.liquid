@@ -1,0 +1,101 @@
+<ul class="trust-banner">
+  {% for block in section.blocks %}
+    {% if block.type == 'column' %}
+      <li class="trust-banner-col">
+        <div class="trust-banner-inner">
+          <img src="{{ block.settings.column-image | img_url: 'medium' }}" loading="lazy" alt="" class="trust-icon">
+          <h3 style="margin-top: 10px; margin-bottom: 5px;" class="trust-title">
+            {{ block.settings['column-heading'] }}
+          </h3>
+          <p>
+            {{ block.settings['column-text'] }}
+          </p>
+        </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<style>
+  .trust-banner-col {
+    width: 33.3333%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .trust-banner {
+    padding-left: 0px;
+    max-width: 940px;
+    display: flex; 
+    margin-right: auto; 
+    margin-left: auto;
+    list-style: none;
+  }
+
+  .trust-banner-inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .trust-icon {
+    height: 60px !important;
+    max-height: 60px !important;
+    opacity: 1;
+    margin-top: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  @media (max-width: 760px) {
+    .trust-banner-col {
+      width: 100%;
+    }
+
+    .trust-banner {
+      flex-direction: column;
+    }
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": "Trust Banner",
+  "blocks": [
+    {
+      "name": "Column",
+      "type": "column",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "column-heading",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "column-image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "column-text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Banner"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["*"],
+    "groups": ["*"]
+  }
+}
+{% endschema %}
