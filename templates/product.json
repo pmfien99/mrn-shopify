@@ -188,17 +188,6 @@
     },
     "1704665350f0c9e21c": {
       "type": "apps",
-      "blocks": {
-        "fa233733-a7e2-446d-9bd6-d17363808693": {
-          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "fa233733-a7e2-446d-9bd6-d17363808693"
-      ],
       "settings": {
       }
     }
