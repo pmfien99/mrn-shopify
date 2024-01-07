@@ -105,6 +105,12 @@
           "type": "shipping_timer",
           "settings": {
           }
+        },
+        "8997f517-7b93-42e6-8845-757756186351": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
         }
       },
       "block_order": [
@@ -119,7 +125,8 @@
         "80e67d89-9369-4ddb-8111-2aa1c36fb500",
         "ce57c15f-9a2f-4731-8dfe-6ed8eefa9924",
         "52df90b0-c2aa-4ae2-8f31-d18e5a33e088",
-        "ee5e9f1c-a80a-4244-950f-03806a509775"
+        "ee5e9f1c-a80a-4244-950f-03806a509775",
+        "8997f517-7b93-42e6-8845-757756186351"
       ],
       "settings": {
         "show_thumbs_desktop": true,
