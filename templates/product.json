@@ -121,18 +121,15 @@
     },
     "1704666945b0c765fd": {
       "type": "apps",
-      "blocks": {
-        "68cef293-88b7-408b-812b-2445856987f0": {
-          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "68cef293-88b7-408b-812b-2445856987f0"
-      ],
       "settings": {
+      }
+    },
+    "4b2e0115-60af-4c77-a232-b5be3cc8d614": {
+      "type": "section-custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"588357\" data-yotpo-product-id=\"{{product.id}}\" data-yotpo-name=\"{{ product.title | escape }}\" data-yotpo-url=\"{{ shop.url }}{{ product.url }}\" data-yotpo-image-url=\"{{ product.featured_image | product_img_url: \"large\" | prepend: \"https:\" | replace: '?', '%3F' | replace: '&','%26'}}\" data-yotpo-price=\"{{ product.price | divided_by: 100.00 }}\" data-yotpo-currency=\"{{ shop.currency }}\" data-yotpo-description=\"{{ product.description | escape }}\"><\/div>",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
       }
     },
     "762b5047-3523-44d8-b693-467a34a1537b": {
@@ -207,6 +204,7 @@
     "breadcrumbs",
     "main-product-updated",
     "1704666945b0c765fd",
+    "4b2e0115-60af-4c77-a232-b5be3cc8d614",
     "762b5047-3523-44d8-b693-467a34a1537b",
     "recommendations",
     "reviews"
