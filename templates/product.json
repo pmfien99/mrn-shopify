@@ -122,7 +122,7 @@
     "c4b4c899-6bd4-45ac-a40d-a5fe6e923abc": {
       "type": "section-custom-liquid",
       "settings": {
-        "custom_liquid": "button#yotpo-main-widget-btn {\n    display: none !important;\n}",
+        "custom_liquid": "<style>\nbutton#yotpo-main-widget-btn {\n    display: none !important;\n}<\/style>",
         "spacing_desktop": 50,
         "spacing_mobile": 30
       }
