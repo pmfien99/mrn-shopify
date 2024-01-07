@@ -137,6 +137,42 @@
         "product_description_mobile_collapse": false
       }
     },
+    "762b5047-3523-44d8-b693-467a34a1537b": {
+      "type": "section-trust-banner",
+      "blocks": {
+        "625e27e2-bf88-4858-acfc-1f688e2c03b8": {
+          "type": "column",
+          "settings": {
+            "column-heading": "Industry Experts",
+            "column-image": "shopify:\/\/shop_images\/6466d9dc53d4373ee5ac6eab_check2.svg",
+            "column-text": "Staffed by industry experts you can trust."
+          }
+        },
+        "5176cf57-3b4f-4bbd-8d67-777688c9b670": {
+          "type": "column",
+          "settings": {
+            "column-heading": "Veteran Owned",
+            "column-image": "shopify:\/\/shop_images\/6466d9dc53d4373ee5ac6eab_check2.svg",
+            "column-text": "MRN is proud to be 100% veteran owned & operated."
+          }
+        },
+        "45226cbc-075e-4a34-8138-093d81652dd7": {
+          "type": "column",
+          "settings": {
+            "column-heading": "Only The Best",
+            "column-image": "shopify:\/\/shop_images\/6466d9dc53d4373ee5ac6eab_check2.svg",
+            "column-text": "Shop from your favorites brands all in one place."
+          }
+        }
+      },
+      "block_order": [
+        "625e27e2-bf88-4858-acfc-1f688e2c03b8",
+        "5176cf57-3b4f-4bbd-8d67-777688c9b670",
+        "45226cbc-075e-4a34-8138-093d81652dd7"
+      ],
+      "settings": {
+      }
+    },
     "recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -167,145 +203,13 @@
         "spacing_mobile": 30,
         "mobile_collapse": false
       }
-    },
-    "recently-viewed": {
-      "type": "section-recently-viewed-products",
-      "settings": {
-        "number_of_items": 5,
-        "text_alignment": "left",
-        "title_size": "h2",
-        "title": "Recently Viewed Products",
-        "enable_quick_buy_desktop": true,
-        "enable_quick_buy_drawer": false,
-        "enable_quick_buy_mobile": true,
-        "enable_quick_buy_qty_selector": true,
-        "enable_color_picker": false,
-        "enable_quick_buy_compact": false,
-        "spacing_desktop": 50,
-        "spacing_mobile": 30
-      }
-    },
-    "5212edfb-396c-40ff-8288-b548d73dc75b": {
-      "type": "section-gallery",
-      "blocks": {
-        "template--20136477229352__5212edfb-396c-40ff-8288-b548d73dc75b-image-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/become_mission_ready_3.jpg",
-            "overlay_opacity": 0,
-            "color_palette": "white",
-            "button_color_palette": "accent",
-            "text_position": "text-center",
-            "title_size": "h1",
-            "title": "",
-            "text": "",
-            "link_text": "Button",
-            "link_url": "",
-            "show_link": false,
-            "image_mobile": "shopify:\/\/shop_images\/100_1.jpg",
-            "title_size_mobile": "mobile-size-18"
-          }
-        },
-        "template--20136477229352__5212edfb-396c-40ff-8288-b548d73dc75b-image-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/100.jpg",
-            "overlay_opacity": 0,
-            "color_palette": "white",
-            "button_color_palette": "accent",
-            "text_position": "text-center",
-            "title_size": "h2",
-            "title": "",
-            "text": "",
-            "link_text": "Button",
-            "link_url": "",
-            "show_link": false,
-            "title_size_mobile": "mobile-size-18"
-          }
-        },
-        "template--20136477229352__5212edfb-396c-40ff-8288-b548d73dc75b-image-3": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "overlay_opacity": 0,
-            "color_palette": "white",
-            "button_color_palette": "accent",
-            "text_position": "text-center",
-            "title_size": "h2",
-            "title": "Image banner",
-            "text": "<p>Give customers details about the banner image(s)<\/p>",
-            "link_text": "Button",
-            "link_url": "",
-            "show_link": false,
-            "title_size_mobile": "mobile-size-18"
-          }
-        }
-      },
-      "block_order": [
-        "template--20136477229352__5212edfb-396c-40ff-8288-b548d73dc75b-image-1",
-        "template--20136477229352__5212edfb-396c-40ff-8288-b548d73dc75b-image-2",
-        "template--20136477229352__5212edfb-396c-40ff-8288-b548d73dc75b-image-3"
-      ],
-      "settings": {
-        "items_layout": "playful-grid",
-        "items_width": 2,
-        "height": "size-m",
-        "width": "boxed",
-        "space_between": 16,
-        "image_zoom": false,
-        "image_move": false,
-        "show_content_on_hover": false,
-        "content_on_hover_color_palette": "dark",
-        "layout_mobile": "rows",
-        "mobile_height": "size-s",
-        "spacing_desktop": 50,
-        "spacing_mobile": 30
-      }
-    },
-    "762b5047-3523-44d8-b693-467a34a1537b": {
-      "type": "section-trust-banner",
-      "blocks": {
-        "625e27e2-bf88-4858-acfc-1f688e2c03b8": {
-          "type": "column",
-          "settings": {
-            "column-heading": "Industry Experts",
-            "column-image": "shopify:\/\/shop_images\/6466d9dc53d4373ee5ac6eab_check2.svg",
-            "column-text": "Staffed by industry experts you can trust."
-          }
-        },
-        "5176cf57-3b4f-4bbd-8d67-777688c9b670": {
-          "type": "column",
-          "settings": {
-            "column-heading": "Trademarked Ingedients",
-            "column-image": "shopify:\/\/shop_images\/6466d9dc53d4373ee5ac6eab_check2.svg",
-            "column-text": "RYSE® uses only the highest quality ingredients, many are patented."
-          }
-        },
-        "45226cbc-075e-4a34-8138-093d81652dd7": {
-          "type": "column",
-          "settings": {
-            "column-heading": "Premium Ingredients",
-            "column-image": "shopify:\/\/shop_images\/6466d9dc53d4373ee5ac6eab_check2.svg",
-            "column-text": "Ethically sourced high quality products. You’ll always get what the label says."
-          }
-        }
-      },
-      "block_order": [
-        "625e27e2-bf88-4858-acfc-1f688e2c03b8",
-        "5176cf57-3b4f-4bbd-8d67-777688c9b670",
-        "45226cbc-075e-4a34-8138-093d81652dd7"
-      ],
-      "settings": {
-      }
     }
   },
   "order": [
     "breadcrumbs",
     "main-product-updated",
+    "762b5047-3523-44d8-b693-467a34a1537b",
     "recommendations",
-    "reviews",
-    "recently-viewed",
-    "5212edfb-396c-40ff-8288-b548d73dc75b",
-    "762b5047-3523-44d8-b693-467a34a1537b"
+    "reviews"
   ]
 }
