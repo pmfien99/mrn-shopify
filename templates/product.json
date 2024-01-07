@@ -138,7 +138,7 @@
     "c4b4c899-6bd4-45ac-a40d-a5fe6e923abc": {
       "type": "section-custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\nbutton:before, .link-btn a:before, #nav-user>ul>li>a i span:before, #totop a:before {\ndisplay: none;\n}\n<\/style>",
+        "custom_liquid": "<style>\nbutton:before, .link-btn a:before, #nav-user>ul>li>a i span:before, #totop a:before {\ndisplay: none !important;!important;\n}\n<\/style>",
         "spacing_desktop": 50,
         "spacing_mobile": 30
       }
