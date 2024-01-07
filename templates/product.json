@@ -7,8 +7,8 @@
         "hide_mobile": true
       }
     },
-    "main-product": {
-      "type": "main-product",
+    "main-product-updated": {
+      "type": "main-product-updated",
       "blocks": {
         "c7259cb9-7235-4028-b6df-3a68077fed80": {
           "type": "title",
@@ -262,7 +262,7 @@
   },
   "order": [
     "breadcrumbs",
-    "main-product",
+    "main-product-updated",
     "recommendations",
     "reviews",
     "recently-viewed",
