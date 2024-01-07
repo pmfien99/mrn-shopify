@@ -35,7 +35,6 @@
         },
         "variant_selection": {
           "type": "variant_selection",
-          "disabled": true,
           "settings": {
             "selection_type": "dropdown",
             "options": true,
