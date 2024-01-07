@@ -119,6 +119,14 @@
         "product_description_mobile_collapse": false
       }
     },
+    "c4b4c899-6bd4-45ac-a40d-a5fe6e923abc": {
+      "type": "section-custom-liquid",
+      "settings": {
+        "custom_liquid": "button#yotpo-main-widget-btn {\n    display: none !important;\n}",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    },
     "1704666945b0c765fd": {
       "type": "apps",
       "blocks": {
@@ -206,6 +214,7 @@
   "order": [
     "breadcrumbs",
     "main-product-updated",
+    "c4b4c899-6bd4-45ac-a40d-a5fe6e923abc",
     "1704666945b0c765fd",
     "762b5047-3523-44d8-b693-467a34a1537b",
     "recommendations",
