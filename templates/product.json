@@ -86,36 +86,9 @@
             "height": 15
           }
         },
-        "80e67d89-9369-4ddb-8111-2aa1c36fb500": {
-          "type": "usp",
-          "disabled": true,
-          "settings": {
-            "usp": "<p>Test 1<\/p>"
-          }
-        },
-        "ce57c15f-9a2f-4731-8dfe-6ed8eefa9924": {
-          "type": "usp",
-          "disabled": true,
-          "settings": {
-            "usp": "<p>Tell a unique detail about this product<\/p>"
-          }
-        },
-        "52df90b0-c2aa-4ae2-8f31-d18e5a33e088": {
-          "type": "usp",
-          "disabled": true,
-          "settings": {
-            "usp": "<p>Tell a unique detail about this product<\/p>"
-          }
-        },
         "ee5e9f1c-a80a-4244-950f-03806a509775": {
           "type": "shipping_timer",
           "settings": {
-          }
-        },
-        "10eb6dc5-a9b2-4aa4-ac19-e52f04b34157": {
-          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
           }
         }
       },
@@ -129,11 +102,7 @@
         "8997f517-7b93-42e6-8845-757756186351",
         "buy_button",
         "e9431daf-3b99-40f6-89ff-dab164cda2ff",
-        "80e67d89-9369-4ddb-8111-2aa1c36fb500",
-        "ce57c15f-9a2f-4731-8dfe-6ed8eefa9924",
-        "52df90b0-c2aa-4ae2-8f31-d18e5a33e088",
-        "ee5e9f1c-a80a-4244-950f-03806a509775",
-        "10eb6dc5-a9b2-4aa4-ac19-e52f04b34157"
+        "ee5e9f1c-a80a-4244-950f-03806a509775"
       ],
       "settings": {
         "show_thumbs_desktop": true,
@@ -216,6 +185,22 @@
         "spacing_mobile": 30,
         "mobile_collapse": false
       }
+    },
+    "1704665350f0c9e21c": {
+      "type": "apps",
+      "blocks": {
+        "fa233733-a7e2-446d-9bd6-d17363808693": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "fa233733-a7e2-446d-9bd6-d17363808693"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -223,6 +208,7 @@
     "main-product-updated",
     "762b5047-3523-44d8-b693-467a34a1537b",
     "recommendations",
-    "reviews"
+    "reviews",
+    "1704665350f0c9e21c"
   ]
 }
