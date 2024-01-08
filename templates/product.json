@@ -61,12 +61,6 @@
             "show_tax": false
           }
         },
-        "8997f517-7b93-42e6-8845-757756186351": {
-          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        },
         "buy_button": {
           "type": "buy_button",
           "settings": {
@@ -99,7 +93,6 @@
         "90724a70-740a-4cc9-984c-764e1d76a5bd",
         "inventory",
         "price",
-        "8997f517-7b93-42e6-8845-757756186351",
         "buy_button",
         "e9431daf-3b99-40f6-89ff-dab164cda2ff",
         "ee5e9f1c-a80a-4244-950f-03806a509775"
@@ -121,17 +114,6 @@
     },
     "1704666945b0c765fd": {
       "type": "apps",
-      "blocks": {
-        "dffd52a1-e072-438e-ba70-b31144a72f93": {
-          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "dffd52a1-e072-438e-ba70-b31144a72f93"
-      ],
       "settings": {
       }
     },
@@ -141,6 +123,21 @@
         "custom_liquid": "<style>\nbutton:before, .link-btn a:before, #nav-user>ul>li>a i span:before, #totop a:before {\ndisplay: none;\n}\n#root button, #root .link-btn a {\n    background: var(--secondary_bg);\n}\n<\/style>",
         "spacing_desktop": 50,
         "spacing_mobile": 30
+      }
+    },
+    "17046729014d122eb9": {
+      "type": "apps",
+      "blocks": {
+        "ca62753e-cc02-4d92-a5ce-7a1ee340de8b": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "ca62753e-cc02-4d92-a5ce-7a1ee340de8b"
+      ],
+      "settings": {
       }
     },
     "762b5047-3523-44d8-b693-467a34a1537b": {
@@ -216,6 +213,7 @@
     "main-product-updated",
     "1704666945b0c765fd",
     "c4b4c899-6bd4-45ac-a40d-a5fe6e923abc",
+    "17046729014d122eb9",
     "762b5047-3523-44d8-b693-467a34a1537b",
     "recommendations",
     "reviews"
