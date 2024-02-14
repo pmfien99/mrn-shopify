@@ -13,6 +13,7 @@
   assign enable_quick_buy_qty_selector = enable_quick_buy_qty_selector | default: false
   assign enable_variant_picker = enable_variant_picker | default: false
   assign enable_color_picker = enable_color_picker | default: false
+  assign enable_variant_picker = enable_variant_picker | default: true
   if show_image == nil
     assign show_image = true
     assign show_labels = true
@@ -36,7 +37,11 @@
       assign enable_quick_buy_drawer = true
     endif
   endif
-  assign current_variant = product.selected_or_first_available_variant
+    if product.variants.size > 1
+      assign current_variant = product_variant | default: product.selected_or_first_available_variant 
+    else 
+      assign current_variant = product
+    endif
   assign product_image_ratio = settings.product_image_ratio
   case product_image_ratio
     when '310x430'
@@ -60,10 +65,16 @@
     assign price =  0 | money
   else
     assign vendor = product.vendor
-    assign title = product.title
-    if layout == 'list-compact'
-      assign price = current_variant.price | money
-    else
+    if enable_break_out_varients
+      if product.variants.size > 1
+        assign title = product.title | append: " - " | append: current_variant.title
+        assign price = current_variant.price | money
+      else 
+        assign title = product.title
+        assign price = product.price | money 
+      endif
+    else 
+      assign title = product.title
       assign price = product.price | money
     endif
   endif
@@ -161,12 +172,22 @@
   {%- if show_image -%}
     <figure {% if settings.multiply_product_images %}class="img-multiply"{% endif %}>
       {% if show_labels %}{%- render 'product-labels', product: product, origin: 'productitem' -%}{% endif %}
-      {% unless layout == 'list-compact' %}<a href="{{ product.url }}">{% endunless %}
-        {%- liquid
+      {% unless layout == 'list-compact' %}
+        {% if enable_break_out_varients %}
+          <a href="{{ current_variant.url }}">
+        {% else %}
+          <a href="{{ product.url }}">
+        {% endif %}
+      {% endunless %}      
+      {%- liquid
           if layout == 'list-compact' and current_variant.featured_image
             assign product_image = current_variant.featured_image
           else
+            if enable_break_out_varients
+            assign product_image = current_variant.featured_image
+            else 
             assign product_image = product.featured_image
+            endif
           endif
         -%}
         {%- if product != blank and product_image -%}

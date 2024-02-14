@@ -12,8 +12,15 @@
 
   assign collection_view = collection_view | default: 'grid'
   if origin == "collection"
-    assign amount_of_products = collection.products_count | default: 0
-    assign amount_of_products_translation = 'collection.amount_of_products'
+    if enable_break_out_varients
+      assign amount_of_products = 0 
+      for product in collection.products
+        assign amount_of_products = amount_of_products | plus: product.variants.size
+      endfor
+    else 
+      assign amount_of_products = collection.products_count | default: 0
+    endif
+      assign amount_of_products_translation = 'collection.amount_of_products'
   elsif origin == "search"
     assign amount_of_products = search.results_count | default: 0
     assign amount_of_products_translation = 'search.amount_of_results'

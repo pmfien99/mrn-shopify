@@ -169,7 +169,42 @@
 
 /* CUSTOM CSS ADDED BY PATRICK FIEN*/
 /* December 2023 */
-.product_dropdown { border-bottom: 2px solid #ebebeb; text-align: left; text-transform: uppercase; font-weight: 700; text-decoration: none; position: relative; }
-.product_dropdown-top { padding-left: 0px !important; padding-right: 60px; width: 100%; text-transform: uppercase; cursor: pointer; padding: 18px 20px 14px; display: block; position: relative; font-weight: 700; }
-.product_dropdown-drop { text-transform: none; padding-top: 0; padding-bottom: 10px; font-weight: 400; position: relative; }
+.product_dropdown {
+  color: var(--primary_text) !important;
+  border-bottom: 2px solid #ebebeb !important;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+}
+
+.product_dropdown-top {
+  padding-left: 0px !important;
+  padding-right: 60px;
+  width: 100%;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 18px 20px 14px;
+  display: block;
+  position: relative;
+  font-weight: 700;
+}
+
+.product_dropdown-drop {
+  text-transform: none;
+  padding-top: 0;
+  font-weight: 400;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out, padding-bottom 0.3s ease-out; /* Updated transition time */
+  padding-bottom: 0; /* Ensure padding is 0 when closed */
+}
+
+.product_dropdown-drop.active {
+  height: auto; /* Adjusted to auto for the open state */
+  padding-bottom: 10px; /* Add padding when active/open */
+}
+
 .product_dropdown-arrow { pointer-events: none; width: 60px; height: 60px; filter: invert(); padding: 26px 20px 24px; position: absolute; top: 0%; bottom: auto; left: auto; right: 0%; }

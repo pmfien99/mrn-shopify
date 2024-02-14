@@ -136,6 +136,7 @@
             origin: "collection",
             object: collection,
             show_amount_of_products: section.settings.show_amount_of_products_in_collection,
+            enable_break_out_varients: section.settings.enable_break_out_varients,
             collection_view: collection_view
           -%}
         {%- when 'product_grid'-%}
@@ -148,8 +149,36 @@
                   prev_button: true
                 %}
               {%- endif -%}
+              {% comment %} 
+              Updated By Patrick Fien - Jan 2024
+              In Order to display multiple variants of product in collection list instead of individual products.            
+              {% endcomment %}
               <ul id="collection" class="l4cl {% if settings.enable_quick_buy %}with-quick-buy{% endif %}{% if collection_view == 'list' %} list{% endif %}{% unless show_filters_and_menu %} mobile-wide{% endunless %}{% if section.settings.products_per_row_mobile == '1' %} w100-mobile{% endif %}" {{ block.shopify_attributes }}>
                 {%- for product in collection.products -%}
+                  {%- if section.settings.enable_break_out_varients %}
+                    {%- for variant in product.variants %}
+                      {%- liquid
+                        capture placeholder_int
+                          cycle 1, 2, 3, 4, 5, 6
+                        endcapture
+                      -%}
+                      {%- render 'product-item',
+                        product: product,
+                        product_variant: variant,
+                        placeholder_int: placeholder_int,
+                        width_class: width_class,
+                        type: 'both',
+                        quick_buy_compact: section.settings.enable_quick_buy_compact,
+                        enable_quick_buy_desktop: section.settings.enable_quick_buy_desktop,
+                        enable_quick_buy_mobile: section.settings.enable_quick_buy_mobile,
+                        enable_quick_buy_qty_selector: section.settings.enable_quick_buy_qty_selector,
+                        enable_quick_buy_drawer: section.settings.enable_quick_buy_drawer,
+                        enable_color_picker: section.settings.enable_color_picker,
+                        enable_break_out_varients: section.settings.enable_break_out_varients,
+                        sizes: image_sizes
+                      -%}
+                    {%- endfor -%}
+                  {%- else %}
                   {%- liquid
                     capture placeholder_int
                       cycle 1, 2, 3, 4, 5, 6
@@ -166,14 +195,20 @@
                     enable_quick_buy_qty_selector: section.settings.enable_quick_buy_qty_selector,
                     enable_quick_buy_drawer: section.settings.enable_quick_buy_drawer,
                     enable_color_picker: section.settings.enable_color_picker,
+                    enable_break_out_varients: section.settings.enable_break_out_varients,
                     sizes: image_sizes
                   -%}
+                  {% endif %}
                 {%- endfor -%}
               </ul>
+              {% comment %} 
+              Updated By Patrick Fien - Jan 2024
+              In Order to display multiple variants of product in collection list instead of individual products.            
+              {% endcomment %}
               {% render 'pagination',
                 paginate: paginate,
                 pagination_type: section.settings.pagination_type,
-                show_amount: section.settings.show_amount_of_products_in_collection
+                show_amount: section.settings.show_amount_of_products_in_collection,
               %}
             {%- endpaginate -%}
           {%- else -%}
@@ -251,6 +286,12 @@
       "type": "checkbox",
       "id": "show_amount_of_products_in_collection",
       "label": "t:main.collection.settings.layout.show_amount_of_products_in_collection.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_break_out_varients",
+      "label": "Enable Breaking Out Varients",
       "default": true
     },
     {

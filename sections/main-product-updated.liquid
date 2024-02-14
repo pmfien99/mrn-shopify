@@ -95,34 +95,7 @@
                     </ul>
                 </li>
             {%- endif -%}
-        </ul>
-            {% comment %}
-              Moved Product Description Here 
-              December 2023 - Patrick Fien 
-            {% endcomment %}
-            {%- if has_pros_and_cons == false and has_specs == false -%}
-              {%- if section.settings.show_product_description and product.description != empty -%}
-                  <footer class="m6tb static">
-                      <nav class="hidden">
-                          <ul>
-                              <li class="active"><a href="#section-info">{{ 'product.description' | t }}</a></li>
-                          </ul>
-                      </nav>
-                      <div>
-                          <div id="section-info">
-                              {%- if section.settings.product_description_enable_read_more -%}
-                                  <div class="m6lm">
-                                      {{ product.description }}
-                                  </div>
-                                  <p class="has-link-more"><a href="./" class="strong link-more">{{ 'general.read_more.read' | t }} <span>{{ 'general.read_more.more' | t }}</span> <span class="hidden">{{ 'general.read_more.less' | t }}</span> <i aria-hidden="true" class="icon-chevron-down"></i></a></p>
-                              {%- else -%}
-                                  {{ product.description }}
-                              {%- endif -%}
-                          </div>
-                      </div>
-                  </footer>
-              {%- endif %}
-            {%- endif %}       
+        </ul>    
     </header>
 {%- endcapture -%}
 
@@ -686,7 +659,8 @@
                                     {% else %}palette-{{ preorder_label_color_palette }}{% endif %}
                                     text-center
                                 ">
-                                    <i aria-hidden="true" class="icon-check"></i>&nbsp;{{ preorder_label }}</span>
+                                    <i aria-hidden="true" class="icon-check"></i>&nbsp;{{ preorder_label }}
+                                </span>
                                 </li>
                                 <input class="hidden" id="{{ input_label | handleize }}" type="text" name="properties[{{ input_label }}]" value="{{ preorder_label | strip_html }}">
                             {%- endif -%}
@@ -922,7 +896,34 @@
             {%- endif -%}
             {%- if custom_short_description and short_description != empty -%}
                 <p class="mobile-only">{{ short_description }}</p>
-            {%- endif -%}      
+            {%- endif -%}
+            {% comment %}
+              Moved Product Description Here 
+              December 2023 - Patrick Fien 
+            {% endcomment %}
+            {%- if has_pros_and_cons == false and has_specs == false -%}
+              {%- if section.settings.show_product_description and product.description != empty -%}
+                  <footer class="m6tb static">
+                      <nav class="hidden">
+                          <ul>
+                              <li class="active"><a href="#section-info">{{ 'product.description' | t }}</a></li>
+                          </ul>
+                      </nav>
+                      <div>
+                          <div id="section-info">
+                              {%- if section.settings.product_description_enable_read_more -%}
+                                  <div class="m6lm">
+                                      {{ product.description }}
+                                  </div>
+                                  <p class="has-link-more"><a href="./" class="strong link-more">{{ 'general.read_more.read' | t }} <span>{{ 'general.read_more.more' | t }}</span> <span class="hidden">{{ 'general.read_more.less' | t }}</span> <i aria-hidden="true" class="icon-chevron-down"></i></a></p>
+                              {%- else -%}
+                                  {{ product.description }}
+                              {%- endif -%}
+                          </div>
+                      </div>
+                  </footer>
+              {%- endif %}
+            {%- endif %}   
             {% comment %}
               Section Added For Product Info Dropdowns 
               December 2023 - Patrick Fien 
@@ -932,7 +933,7 @@
                 <div class="product_dropdown">
                   <div class="product_dropdown-top">
                     <div>Suggested Use</div>
-                    <img class="product_dropdown-arrow" src="dropdown-arrow.svg" alt="dropdown arrow image" width="20" height="10">
+                    <img src="{{ 'dropdown-arrow' | handleize | append: '.svg' | asset_url }}"  width="20" height="10" alt="dropdown arrow image"  class="product_dropdown-arrow" />
                   </div>
                   <div class="product_dropdown-drop">
                     {{ product.metafields.additional_info.suggested_use }}
@@ -945,10 +946,10 @@
                 <div class="product_dropdown">
                   <div class="product_dropdown-top">
                     <div>Nutrition Facts</div>
-                    <img class="product_dropdown-arrow" src="dropdown-arrow.svg" alt="dropdown arrow image" width="20" height="10">
+                    <img src="{{ 'dropdown-arrow' | handleize | append: '.svg' | asset_url }}"  width="20" height="10" alt="dropdown arrow image"  class="product_dropdown-arrow" />
                   </div>
                   <div class="product_dropdown-drop">
-                    {{ product.metafields.additional_info.nutrition_facts }}
+                    <img src="{{ product.metafields.additional_info.nutrition_facts | img_url: '500x500' }}" alt="Nutrition Facts Label">
                   </div>
                 </div>
               {%- endif -%}
@@ -956,19 +957,33 @@
             <div class="product_dropdown">
               <div class="product_dropdown-top">
                 <div>Shipping & Returns</div>
-                  <img class="product_dropdown-arrow" src="dropdown-arrow.svg" alt="dropdown arrow image" width="20" height="10">
+                <img src="{{ 'dropdown-arrow' | handleize | append: '.svg' | asset_url }}"  width="20" height="10" alt="dropdown arrow image"  class="product_dropdown-arrow" />
               </div>
               <div class="product_dropdown-drop">
-                Shipping & Returns Text will go here
+                <br>
+                <strong>SHIPPING METHODS AND COSTS</strong><br>
+                <p>At checkout, you will be prompted to choose a shipping method for your item(s). Shipping costs are dependent on the items in your order and the shipping method you select. Your total shipping charges will automatically compute during checkout prior to the completion of your order.</p>
+                <p>At this time, shipping is only available for customers in the United States. If you choose to upgrade your shipping method, your order must be received and clear credit authorization by 4PM EST or your order may not be processed until the following business day. Business days are Monday-Friday, excluding observed holidays within the United States.</p>
+                <br>
+                <strong>SHIPPING RULES AND RESTRICTIONS</strong><br>
+                <p>Orders are shipped on business days only. Business days are Monday-Friday, excluding observed holidays within the United States.</p>
+                <p>Mission Ready Nutrition customer service is available weekdays 9AM-5PM EST by emailing info@missionreadynutrition.com. We do our very best to respond to support emails within 48 hours.</p>
+                <br>
+                <strong>REFUND AND RETURN POLICY</strong><br>
+                <p>We want you to be fully satisfied with every item that you purchase from missionreadynutrition.com or from an Authorized Mission Ready Nutrition Retailer. Please note, due to the nature of consumable products we are unable to refund or accept returns on these products.</p>
+                <br>
+                <p>If you receive an item that is damaged we will give you full credit of your order amount in the form of a misssionreadynutrition.com Gift Card, excluding original shipping costs. Any claims for damaged orders or missing items must be received within 48 hours (on business days) of receipt of package by contacting our customer service at info@missionreadynutrition.com and including photos showing the damaged product(s). If you need any help claiming the damaged shipment with the shipping carrier, please reach out to our customer service so we can help. All damaged shipments can be filed with the carrier that delivered the shipment and submitted for compensation from the carrier if approved by the carrier.</p>
               </div>
             </div>
             {%- if section.settings.show_link_to_reviews == true -%}
-                <div class="product_dropdown">
-                  <div class="product_dropdown-top">
-                    <div>Reviews</div>
-                    <img class="product_dropdown-arrow" src="dropdown-arrow.svg" alt="dropdown arrow image" width="20" height="10">
+                <a href="#judgeme_product_reviews" style="text-decoration: none">
+                  <div class="product_dropdown">
+                    <div class="product_dropdown-top">
+                      <div>Reviews</div>
+                      <img src="{{ 'dropdown-arrow' | handleize | append: '.svg' | asset_url }}"  width="20" height="10" alt="dropdown arrow image"  class="product_dropdown-arrow" />
+                    </div>
                   </div>
-                </div>
+                </a>
             {%- endif -%}
         </div>
     </div>
