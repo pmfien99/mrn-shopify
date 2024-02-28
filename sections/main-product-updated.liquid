@@ -214,8 +214,6 @@
 <style>
 @media screen and (max-width: 768px) {
   h1.m5 {
-  display: none;
-  }
 }
 @media screen and (min-width: 768px) {
 
@@ -945,19 +943,6 @@
               Section Added For Product Info Dropdowns 
               December 2023 - Patrick Fien 
             {% endcomment %}
-            {%- if section.settings.show_suggested_use == true -%}
-              {%- if product.metafields.additional_info.suggested_use != null -%}
-                <div class="product_dropdown">
-                  <div class="product_dropdown-top">
-                    <div>Suggested Use</div>
-                    <img src="{{ 'dropdown-arrow' | handleize | append: '.svg' | asset_url }}"  width="20" height="10" alt="dropdown arrow image"  class="product_dropdown-arrow" />
-                  </div>
-                  <div class="product_dropdown-drop">
-                    {{ product.metafields.additional_info.suggested_use }}
-                  </div>
-                </div>
-              {%- endif -%}
-            {%- endif -%}
             {%- if section.settings.show_nutrition_info == true -%}
               {%- if product.metafields.additional_info.nutrition_facts != null -%}
                 <div class="product_dropdown">
@@ -971,6 +956,20 @@
                 </div>
               {%- endif -%}
             {%- endif -%}
+            {%- if section.settings.show_suggested_use == true -%}
+              {%- if product.metafields.additional_info.suggested_use != null -%}
+                <div class="product_dropdown">
+                  <div class="product_dropdown-top">
+                    <div>Suggested Use</div>
+                    <img src="{{ 'dropdown-arrow' | handleize | append: '.svg' | asset_url }}"  width="20" height="10" alt="dropdown arrow image"  class="product_dropdown-arrow" />
+                  </div>
+                  <div class="product_dropdown-drop">
+                    {{ product.metafields.additional_info.suggested_use }}
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+
             <div class="product_dropdown">
               <div class="product_dropdown-top">
                 <div>Shipping</div>
