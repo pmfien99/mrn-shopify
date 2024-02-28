@@ -223,6 +223,13 @@
   }
 
 }
+@media screen and (max-width: 768px) {
+
+  h1.new-title-pro-mobile  {
+    display: none !important;
+  }
+
+}
 </style>
     {%- assign has_model = product.media | where: "media_type", "model" | first -%}
     {%- if has_model -%}
