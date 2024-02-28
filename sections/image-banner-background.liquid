@@ -1,4 +1,5 @@
-{%- # Label: Background Color -%}
+<section style="background-color: {{ section.settings.background_color }};">
+    <div class="banner-container">
 {{ section.settings.background_color }} 
 
 {%- # Label: Desktop Image -%}
@@ -8,8 +9,14 @@
 {%- # Label: Desktop Image 2 -%}
 {%- assign desktop_image_2 = section.settings.desktop_image_2 -%}
 {{ desktop_image_2 | image_url: width: desktop_image_2.width | image_tag: class: 'mobile-banner-image', loading: 'lazy' }}
-
+</div>
+</section>
 <style>
+.banner-container {
+display: grid
+place-items:center
+}
+
     @media screen and (min-width: 768px) {
         .desktop-banner-image {
         display: block;
