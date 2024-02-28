@@ -200,3 +200,7 @@
 }
 
 .product_dropdown-arrow { pointer-events: none; width: 60px; height: 60px; filter: invert(); padding: 26px 20px 24px; position: absolute; top: 0%; bottom: auto; left: auto; right: 0%; }
+
+.new-title-pro-wrapper {
+	display: flex;
+}
