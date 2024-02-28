@@ -112,6 +112,14 @@
         "product_description_mobile_collapse": false
       }
     },
+    "image_banner_background_t6WjX8": {
+      "type": "image-banner-background",
+      "settings": {
+        "background_color": "#333333",
+        "desktop_image": "shopify:\/\/shop_images\/MRN_Banner_Desktop.jpg",
+        "desktop_image_2": "shopify:\/\/shop_images\/MRN_MOBILE_Banner.jpg"
+      }
+    },
     "17046729014d122eb9": {
       "type": "apps",
       "blocks": {
@@ -198,6 +206,7 @@
   "order": [
     "breadcrumbs",
     "main-product-updated",
+    "image_banner_background_t6WjX8",
     "17046729014d122eb9",
     "762b5047-3523-44d8-b693-467a34a1537b",
     "recommendations",
