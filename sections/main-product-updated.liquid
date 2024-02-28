@@ -208,7 +208,9 @@
         </ul>
 
     </div>
-    {{ product.title }}
+  <div class="new-title-pro-wrapper">
+    <h1 class="new-title-pro">{{ product.title }}</h1>
+  </div>
     {%- assign has_model = product.media | where: "media_type", "model" | first -%}
     {%- if has_model -%}
         <script type="application/json" id="ProductJSON-{{ product.id }}">
