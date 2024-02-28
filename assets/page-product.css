@@ -37,6 +37,12 @@
 		display: none;
 	}
 }
+@media only screen and (min-width: 760px) {
+	.new-title-pro-wrapper {
+		display: none;
+	}
+
+}
 
 #root .spr-form-label { font-size: 1em; line-height: var(--main_lh); }
 
