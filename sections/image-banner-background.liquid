@@ -1,0 +1,45 @@
+{%- # Label: Background Color -%}
+{{ section.settings.background_color }} 
+
+{%- # Label: Desktop Image -%}
+{%- assign desktop_image = section.settings.desktop_image -%}
+{{ desktop_image | image_url: width: desktop_image.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }}
+
+{%- # Label: Desktop Image 2 -%}
+{%- assign desktop_image_2 = section.settings.desktop_image_2 -%}
+{{ desktop_image_2 | image_url: width: desktop_image_2.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }}
+
+{% schema %}
+  {
+  "name": "Banner Image",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#333333"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_2",
+      "label": "Desktop Image 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Image"
+    }
+  ]
+}  
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
