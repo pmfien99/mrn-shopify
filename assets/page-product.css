@@ -212,11 +212,3 @@
     margin-top: 0;
     font-size: 2.2em;
 }
-
-@media screen and (min-width: 768px) {
-
-  .new-title-pro-wrapper .new-title-pro-mobile {
-    display: none;
-  }
-
-}
