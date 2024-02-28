@@ -33,6 +33,9 @@
 	.m6pe figure { width: 125px; min-height: 0; }
 	.m6pe .r6rt { margin-bottom: 8px; }
 	.m6pe .r6rt .rating { margin-top: 1px; }
+	.new-title-pro-wrapper {
+		display: none;
+	}
 }
 
 #root .spr-form-label { font-size: 1em; line-height: var(--main_lh); }
@@ -200,3 +203,12 @@
 }
 
 .product_dropdown-arrow { pointer-events: none; width: 60px; height: 60px; filter: invert(); padding: 26px 20px 24px; position: absolute; top: 0%; bottom: auto; left: auto; right: 0%; }
+
+.new-title-pro-wrapper {
+	display: flex;
+}
+
+.new-title-pro-mobile {
+    margin-top: 0;
+    font-size: 2.2em;
+}
