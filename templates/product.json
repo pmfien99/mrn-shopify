@@ -12,6 +12,7 @@
       "blocks": {
         "c7259cb9-7235-4028-b6df-3a68077fed80": {
           "type": "title",
+          "disabled": true,
           "settings": {
             "layout": "title-right",
             "title_size": "h1",
