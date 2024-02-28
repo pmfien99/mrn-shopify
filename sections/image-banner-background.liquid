@@ -1,12 +1,9 @@
 <section style="background-color: {{ section.settings.background_color }};">
     <div class="banner-container">
-{{ section.settings.background_color }} 
 
-{%- # Label: Desktop Image -%}
 {%- assign desktop_image = section.settings.desktop_image -%}
 {{ desktop_image | image_url: width: desktop_image.width | image_tag: class: 'desktop-banner-image', loading: 'lazy' }}
 
-{%- # Label: Desktop Image 2 -%}
 {%- assign desktop_image_2 = section.settings.desktop_image_2 -%}
 {{ desktop_image_2 | image_url: width: desktop_image_2.width | image_tag: class: 'mobile-banner-image', loading: 'lazy' }}
 </div>
