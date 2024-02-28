@@ -37,12 +37,6 @@
 		display: none;
 	}
 }
-@media only screen and (min-width: 760px) {
-	.new-title-pro-wrapper, .new-title-pro-mobile {
-		display: none;
-	}
-
-}
 
 #root .spr-form-label { font-size: 1em; line-height: var(--main_lh); }
 
@@ -219,3 +213,10 @@
     font-size: 2.2em;
 }
 
+@media screen and (min-width: 768px) {
+
+  .new-title-pro-wrapper .new-title-pro-mobile {
+    display: none;
+  }
+
+}
