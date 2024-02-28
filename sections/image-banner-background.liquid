@@ -10,7 +10,7 @@
 {{ desktop_image_2 | image_url: width: desktop_image_2.width | image_tag: class: 'mobile-banner-image', loading: 'lazy' }}
 
 <style>
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 768px) {
         .desktop-banner-image {
         display: block;
         }
@@ -18,7 +18,7 @@
         display: none;
         }
       }
-      @media screen and (min-width: 768px) {
+      @media screen and (max-width: 768px) {
         .desktop-banner-image {
             display: none;
             }
