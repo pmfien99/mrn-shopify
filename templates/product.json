@@ -14,7 +14,7 @@
           "type": "title",
           "settings": {
             "layout": "title-right",
-            "title_size": "h1",
+            "title_size": "size-50",
             "show_vendor_brand": false,
             "show_vendor_name": false,
             "show_product_rating": true,
@@ -31,6 +31,12 @@
           "type": "short_description",
           "settings": {
             "show_read_more": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax": false
           }
         },
         "variant_selection": {
@@ -53,12 +59,6 @@
         "inventory": {
           "type": "inventory",
           "settings": {
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_tax": false
           }
         },
         "buy_button": {
@@ -89,10 +89,10 @@
       "block_order": [
         "c7259cb9-7235-4028-b6df-3a68077fed80",
         "short_description",
+        "price",
         "variant_selection",
         "90724a70-740a-4cc9-984c-764e1d76a5bd",
         "inventory",
-        "price",
         "buy_button",
         "e9431daf-3b99-40f6-89ff-dab164cda2ff",
         "ee5e9f1c-a80a-4244-950f-03806a509775"
