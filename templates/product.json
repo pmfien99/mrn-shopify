@@ -115,7 +115,7 @@
       "type": "image-banner-background",
       "settings": {
         "background_color": "#333333",
-        "desktop_image": "shopify:\/\/shop_images\/MRN_Banner_Desktop.jpg",
+        "desktop_image": "shopify:\/\/shop_images\/MRN_Banner_2.6.24_6.jpg",
         "desktop_image_2": "shopify:\/\/shop_images\/MRN_MOBILE_Banner.jpg"
       }
     },
