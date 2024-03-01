@@ -3,6 +3,7 @@
 .bv_mainselect .bv_ul_inner { display: none; overflow-x: hidden; overflow-y: auto; position: absolute; left: 0; right: 0; top: 100%; list-style: none; max-height: 200px; margin: 0; padding: 0; opacity: 1 !important; border-radius: 0 0 var(--b2i) var(--b2i); border: 1px solid var(--custom_input_bd); border-top-width: 0; background: var(--custom_input_bg); }
 .bv_mainselect .bv_ul_inner .li { display: block; overflow: hidden; position: relative; z-index: 2; width: 100%; margin: 0; padding: 0; border-width: 0; cursor: pointer; }
 #root .bv_mainselect .bv_ul_inner .li { }
+span.sl_inner {font-weight:bolder;text-transform: uppercase !important;}
 .bv_mainselect .bv_ul_inner .li.bv_disabled, .bv_mainselect .bv_ul_inner .li.disabled { color: var(--custom_input_fg); }
 .bv_mainselect .bv_ul_inner .li.bv_disabled a, .bv_mainselect .bv_ul_inner .li.disabled a { color: inherit; }
 .bv_mainselect .bv_ul_inner .li.bv_disabled .text, .bv_mainselect .bv_ul_inner .li.disabled .text, .bv_mainselect .bv_ul_inner .li.bv_disabled img, .bv_mainselect .bv_ul_inner .li.disabled img, .bv_mainselect .bv_ul_inner .li.bv_disabled i:not(.icon-circle), .bv_mainselect .bv_ul_inner .li.disabled i:not(.icon-circle) { opacity: .53; }
