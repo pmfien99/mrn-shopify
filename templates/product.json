@@ -2,7 +2,6 @@
   "sections": {
     "breadcrumbs": {
       "type": "breadcrumbs",
-      "disabled": true,
       "settings": {
         "hide_mobile": true
       }
