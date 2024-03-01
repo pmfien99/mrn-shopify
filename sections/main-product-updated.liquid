@@ -645,7 +645,7 @@
                             {%- if preorder -%}
                                 <button type="submit" class="preorder-button">{{ block.settings.preorder_button_text }}</button>
                             {%- elsif current_variant.available -%}
-                                <button type="submit" class="overlay-tertiary">{{ 'product.form.add_to_cart' | t }}</button>
+                                <button  type="submit" class="capitalize overlay-tertiary">{{ 'product.form.add_to_cart' | t }}</button>
                             {%- else -%}
                                 <button type="submit" class="disabled overlay-tertiary">{{ 'product.form.not_in_stock' | t }}</button>
                             {%- endif -%}
