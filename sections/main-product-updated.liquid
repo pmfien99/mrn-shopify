@@ -68,6 +68,9 @@
     h1.m5 {
       display: none;
     }
+    .override-f8pr-width {
+    min-width:108%;
+    }
   }
   
   @media screen and (min-width: 768px) {
@@ -263,7 +266,7 @@ padding-left: 50px;
             assign form_class = 'f8pr f8pr-buy-button'
             assign form_id = 'main-product-form-' | append: product.id
         -%}
-        <div class="f8pr">
+        <div class="f8pr override-f8pr-width">
             <legend>{{ 'product.form.title' | t }}</legend>
             {%- for block in section.blocks -%}
                 {%- case block.type -%}
