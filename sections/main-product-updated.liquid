@@ -211,20 +211,7 @@
           <h1 class="new-title-pro-mobile">{{ product.title }}</h1>
         </div>
     </div>
-<style>
-@media screen and (max-width: 768px) {
-  h1.m5 {
-    display: none;
-}
 
-@media screen and (min-width: 768px) {
-
-  h1.new-title-pro-mobile  {
-    display: none !important;
-  }
-
-}
-</style>
     {%- assign has_model = product.media | where: "media_type", "model" | first -%}
     {%- if has_model -%}
         <script type="application/json" id="ProductJSON-{{ product.id }}">
