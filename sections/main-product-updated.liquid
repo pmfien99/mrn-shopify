@@ -80,8 +80,7 @@
       }
 
       article#main-product > .l4pr-container > .s4wi {
-        display: flex;
-        flex-direction: row-reverse;
+
       }
 
       article#main-product > .l4pr-container {
@@ -106,6 +105,21 @@ padding-left: 50px;
 }
 
 </style>
+
+
+<script>
+  <script>
+    window.addEventListener('load', (event) => {
+      // Execute code only when the window has fully loaded
+      const targetedElement = document.querySelector('article#main-product > .l4pr-container > .s4wi');
+      
+      // Apply the specified CSS rule to the targeted element
+      targetedElement.style.display = 'flex';
+      targetedElement.style.flexDirection = 'row-reverse';
+    });
+    </script>
+</script>
+
 {%- capture header -%}
     <header {{ title_block.shopify_attributes }} class="class-x">
         <ul class="l4dr m15">
