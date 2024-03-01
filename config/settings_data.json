@@ -30,7 +30,7 @@
     "sale_label_color": "#e93d3d",
     "sale_label_text_color": "#FFFFFF",
     "heading_font": "open_sans_n7",
-    "body_font": "sans-serif",
+    "body_font": "montserrat_n5",
     "mobile_font_size": "18px",
     "product_image_ratio": "310x310",
     "fill_product_images": false,
