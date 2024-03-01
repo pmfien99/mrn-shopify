@@ -110,7 +110,7 @@ padding-left: 50px;
   <script>
     window.addEventListener('load', (event) => {
       // Check if the device is a mobile device
-      if (/Mobi|Android/i.test(navigator.userAgent)) {
+      if ( !/Mobi|Android/i.test(navigator.userAgent)) {
           // Execute code only when the window has fully loaded
           const targetedElement = document.querySelector('article#main-product > .l4pr-container > .s4wi');
   
