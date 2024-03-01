@@ -109,13 +109,17 @@ padding-left: 50px;
 
   <script>
     window.addEventListener('load', (event) => {
-      // Execute code only when the window has fully loaded
-      const targetedElement = document.querySelector('article#main-product > .l4pr-container > .s4wi');
-      
-      // Apply the specified CSS rule to the targeted element
-      targetedElement.style.display = 'flex';
-      targetedElement.style.flexDirection = 'row-reverse';
-    });
+      // Check if the device is a mobile device
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+          // Execute code only when the window has fully loaded
+          const targetedElement = document.querySelector('article#main-product > .l4pr-container > .s4wi');
+  
+          // Apply the specified CSS rule to the targeted element
+          targetedElement.style.display = 'flex';
+          targetedElement.style.flexDirection = 'row-reverse';
+      }
+  });
+  
     </script>
 
 {%- capture header -%}
