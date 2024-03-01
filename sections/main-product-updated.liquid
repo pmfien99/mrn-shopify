@@ -63,7 +63,33 @@
     assign sizes = '(min-width: 1000px) ' | append: main_width | append: 'px, 100vw'
 
 -%}
+<style>
+  @media screen and (max-width: 768px) {
+    h1.m5 {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    h1.new-title-pro-mobile {
+      display: none !important; 
+    }
+  }
+.price {
+  font-size: 1.75em !important;
+  }
+  .capitalize {
+    text-transform: uppercase !important;
+  }
 
+  span.li > span.text {
+  font-weight: bold !important;
+  }
+  .sl_inner {
+    text-transform: uppercase !important;
+  }
+
+</style>
 {%- capture header -%}
     <header {{ title_block.shopify_attributes }} class="class-x">
         <ul class="l4dr m15">
@@ -985,33 +1011,7 @@
         </div>
     </div>
 </article>
-<style>
-  @media screen and (max-width: 768px) {
-    h1.m5 {
-      display: none;
-    }
-  }
-  
-  @media screen and (min-width: 768px) {
-    h1.new-title-pro-mobile {
-      display: none !important; 
-    }
-  }
-.price {
-  font-size: 1.75em !important;
-  }
-  .capitalize {
-    text-transform: uppercase !important;
-  }
 
-  span.li > span.text {
-  font-weight: bold !important;
-  }
-  .sl_inner {
-    text-transform: uppercase !important;
-  }
-
-</style>
 
 
 
