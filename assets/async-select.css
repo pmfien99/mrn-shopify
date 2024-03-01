@@ -1,7 +1,7 @@
 .bv_atual { background-position: -3000em -3000em; }
 .bv_mainselect { display: block; }
 .bv_mainselect .bv_ul_inner { display: none; overflow-x: hidden; overflow-y: auto; position: absolute; left: 0; right: 0; top: 100%; list-style: none; max-height: 200px; margin: 0; padding: 0; opacity: 1 !important; border-radius: 0 0 var(--b2i) var(--b2i); border: 1px solid var(--custom_input_bd); border-top-width: 0; background: var(--custom_input_bg); }
-.bv_mainselect .bv_ul_inner .li {border-bottom: 0.5px solid lightgray; display: block; overflow: hidden; position: relative; z-index: 2; width: 100%; margin: 0; padding: 0; border-width: 0; cursor: pointer; }
+.bv_mainselect .bv_ul_inner .li {border-bottom: 0.5px solid lightgray !important; display: block; overflow: hidden; position: relative; z-index: 2; width: 100%; margin: 0; padding: 0; border-width: 0; cursor: pointer; }
 #root .bv_mainselect .bv_ul_inner .li { }
 .bv_mainselect .bv_ul_inner .li.bv_disabled, .bv_mainselect .bv_ul_inner .li.disabled { color: var(--custom_input_fg); }
 .bv_mainselect .bv_ul_inner .li.bv_disabled a, .bv_mainselect .bv_ul_inner .li.disabled a { color: inherit; }
