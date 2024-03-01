@@ -149,7 +149,7 @@
           "type": "column",
           "settings": {
             "column-heading": "Veteran Owned",
-            "column-image": "shopify:\/\/shop_images\/6466d9dc53d4373ee5ac6eab_check2.svg",
+            "column-image": "shopify:\/\/shop_images\/noun-veteran-199819.svg",
             "column-text": "MRN is proud to be 100% veteran owned & operated."
           }
         },
@@ -157,7 +157,7 @@
           "type": "column",
           "settings": {
             "column-heading": "Only The Best",
-            "column-image": "shopify:\/\/shop_images\/6466d9dc53d4373ee5ac6eab_check2.svg",
+            "column-image": "shopify:\/\/shop_images\/noun-best-6609940.svg",
             "column-text": "Shop from your favorites brands all in one place."
           }
         }
