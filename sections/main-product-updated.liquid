@@ -124,7 +124,7 @@ padding-left: 50px;
 
 {%- capture header -%}
     <header {{ title_block.shopify_attributes }} class="class-x">
-        <ul class="l4dr m15">
+        <ul id="overRideH1Width" class="l4dr m15">
           <{{ title_size }} class="m5{% if settings.product_titles_caps %} text-uppercase{% endif %}{% if title_classes %} {{ title_classes }}{% endif %}">{{ product.title }}</{{ title_size }}>
 
             {%- if product.metafields.reviews.rating and title_block.settings.show_product_rating -%}
