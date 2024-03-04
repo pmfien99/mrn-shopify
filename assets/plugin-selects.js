@@ -480,12 +480,6 @@ const select = document.querySelector('select');
 select.addEventListener('change', (event) => {
   const selectedOption = event.target.value;
 
-  const spans = document.getElementsByTagName('span');
-  
-  for (let span of spans) {
-    if (span.classList.contains(selectedOption)) {
-      span.style.display = 'block';
-      break;
-    }
-  }
+  const spans = document.getElementsByClassName(selectedOption);
+  spans[0].style.display = 'block'; 
 });
