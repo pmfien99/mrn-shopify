@@ -137,17 +137,13 @@ padding-left: 50px;
 {%- for variant in product.variants -%}
   
   <span class="{{variant.id}} variant-option-display">
-    {{ variant.option1 }}
+    {%- if forloop.first -%}
+      {{ variant.option1 }}
+    {%- endif -%}
   </span>
 
 {%- endfor -%}
-<li>{{ option.value }}</li>
 
-          <style>
-          .variant-option-display {
-          display: none;
-        }
-          </style>
             {%- if product.metafields.reviews.rating and title_block.settings.show_product_rating -%}
                 <li class="overlay-gray">
                     <a href="#section-reviews" class="r6rt" data-val="{{ product.metafields.reviews.rating.value }}" data-of="5">
