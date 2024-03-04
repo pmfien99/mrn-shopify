@@ -211,7 +211,7 @@ class BVSelect {
 				document.getElementById("ul_" + randomID).style.bottom = "";
 				if (window.innerWidth < breakpoint) {
 					document.getElementById("ul_" + randomID).classList.add("bv_ul_mobile");
-					document.querySelector(MDivSelector).insertAdjacentHTML("afterend", '<div id="deletebg" class="bv_ul_bg"></div>');
+					document.querySelector(MDivSelector).insertAdjacentHTML("afterend", '<div  class="bv_ul_bg"></div>');
 					document.body.classList.add("stop-scrolling")
 				} else {
 					document.getElementById("ul_" + randomID).classList.remove("bv_ul_mobile")
