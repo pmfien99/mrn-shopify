@@ -478,7 +478,14 @@ class BVSelect {
 const select = document.querySelector('select');
 
 select.addEventListener('change', (event) => {
-  const selectedValue = event.target.value;
-  
-  document.querySelector(`.${selectedValue}`).style.display = 'block';
-}); 
+
+  // Sanitize option value 
+  let selectedValue = event.target.value;
+  selectedValue = selectedValue.replace(/[^a-zA-Z0-9]/g, '');
+
+  // Use sanitized value
+  document.querySelector(`.${selectedValue}`).style.display = 'block'; 
+});
+
+
+
