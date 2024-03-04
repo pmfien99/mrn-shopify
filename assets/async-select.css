@@ -10,7 +10,7 @@
 .bv_mainselect .bv_ul_inner .li a:before { content: ""; display: block; overflow: hidden; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: -1; text-align: left; text-indent: -3000em; direction: ltr; }
 .bv_mainselect .bv_ul_inner .li a i { display: inline-block; position: relative; margin-right: 8px; font-size: var(--size_18_f); line-height: 1px; }
 .bv_mainselect .bv_ul_inner .li a i.icon-circle { display: block; overflow: hidden; position: relative; top: 10px; width: var(--size_22_f); height: var(--size_22_f); margin-right: 12px; margin-top: -20px; border-radius: 99px; box-shadow: inset 0 1px 2px rgba(0,0,0,.2); text-align: left; text-indent: -3000em; direction: ltr; }
-.bv_mainselect .bv_ul_inner .li a span.text { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.bv_mainselect .bv_ul_inner .li a span.text {width: 100%; line-height: 3em; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .bv_mainselect .bv_ul_inner .img { display: block; position: relative; width: 42px; /*height: 38px;*/ margin: 0 20px 0 0; padding-top: calc(var(--ratio) * 42px); -webkit-flex-shrink: 0; -ms-flex-shrink: 0; flex-shrink: 0; }
 .bv_mainselect .bv_ul_inner .img img { display: block; position: absolute; left: 0; right: 0; top: 0; bottom: 0; width: 100% !important; height: 100% !important; max-height: none !important; -o-object-fit: contain; object-fit: contain; -o-object-position: center center; object-position: center center; }
 .bv_mainselect .bv_ul_inner .img.auto { padding-top: 0; }
