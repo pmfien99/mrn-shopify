@@ -135,7 +135,13 @@ padding-left: 50px;
           <{{ title_size }} class="m5{% if settings.product_titles_caps %} text-uppercase{% endif %}{% if title_classes %} {{ title_classes }}{% endif %}">{{ product.title }}</{{ title_size }}>
 
 {%- for variant in product.variants -%}
-  <span class="displayNone variant-display-{{variant.id}}">{{ variant.option1 }}</span>
+  
+  <span class="
+    {% unless forloop.first %}displayNone{% endunless %}
+    variant-display-{{variant.id}}
+    ">
+    {{ variant.option1 }}
+  </span>
 
 {%- endfor -%}
 <li>{{ option.value }}</li>
