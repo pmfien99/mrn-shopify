@@ -274,6 +274,11 @@ padding-left: 50px;
 
         <div class="new-title-pro-wrapper">
           <h1 class="new-title-pro-mobile">{{ product.title }}</h1>
+          {% for product_option in product.options_with_values %}
+            {%- for value in product_option.values -%}
+                <{{ product_option.name }}>{{value}}</{{ product_option.name }}>
+            {%- endfor -%}
+        {% endfor %}
         </div>
     </div>
 
@@ -1032,8 +1037,7 @@ padding-left: 50px;
               <div class="product_dropdown-drop">
                 <br>
                 <strong>SHIPPING METHODS AND COSTS</strong>
-                <p>Here at Mission Ready Nutrition we strive to ship all orders within 1 business day of placing your order with us. Free shipping is automatically applied for orders of $99 or more and is $4.95 for orders under $99. At this time, shipping is only available for customers in the United States and APO/FPO addresses.
-              </p>
+                <p>Here at Mission Ready Nutrition we strive to ship all orders within 1 business day of placing your order with us. Free shipping is automatically applied for orders of $99 or more and is $4.95 for orders under $99. At this time, shipping is only available for customers in the United States and APO/FPO addresses.    </p>
                 
               </div>
             </div>
