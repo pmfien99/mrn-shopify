@@ -137,7 +137,9 @@ padding-left: 50px;
 {%- for variant in product.variants -%}
   
   <span class="
-    {% unless forloop.first %}displayNone{% endunless %}{{variant.id}}">
+    {% unless forloop.first %}displayNone{% endunless %}
+    {{variant.id}}
+    ">
     {{ variant.option1 }}
   </span>
 
