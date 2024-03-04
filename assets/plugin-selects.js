@@ -495,18 +495,17 @@ document.addEventListener('click', function(event) {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", function() {
-	const selectItems = document.querySelectorAll('.li');
-  
-	selectItems.forEach(item => {
-	  item.addEventListener('click', function(event) {
-		event.preventDefault(); // Prevent default link behavior
-		const selectedImage = item.querySelector('.img img');
-		const backgroundImageUrl = selectedImage.getAttribute('src');
-  
-		const slInnerElement = document.querySelector('.sl_inner');
-		slInnerElement.style.backgroundImage = `url(${backgroundImageUrl})`;
-	  });
-	});
-  });
+    const selectItems = document.querySelectorAll('.li a');
+
+    selectItems.forEach(item => {
+        item.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            
+            const selectedImage = document.querySelector('.bv_selected .img img');
+            const sourceAttribute = selectedImage.getAttribute('src');
+            
+            console.log(sourceAttribute); // Log the source attribute to the console
+        });
+    });
+});
