@@ -484,9 +484,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const selectedImage = document.querySelector('.bv_selected .img img');
             const sourceAttribute = selectedImage.getAttribute('src');
             
-            // Set the background image of the desired element to the source attribute
-            const slInnerElement = document.querySelector('.sl_inner');
-            slInnerElement.style.backgroundImage = `url(${sourceAttribute})`;
+            console.log(sourceAttribute); // Log the source attribute to the console
         });
     });
 });
