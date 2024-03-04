@@ -493,14 +493,6 @@ window.onload = function() {
             for (var i = 0; i < elementsToReplace.length; i++) {
                 elementsToReplace[i].innerText = innerText;
             }
-
-            // Find the closest image element and log its source
-            var closestImage = event.target.closest('span').previousElementSibling;
-            if (closestImage && closestImage.tagName === 'IMG') {
-                console.log(closestImage.src);
-            } else {
-                console.log('No image found.');
-            }
         }
     });
 };
