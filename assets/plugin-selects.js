@@ -475,25 +475,16 @@ class BVSelect {
 	}
 }
 
-// Get select element 
-const select = document.querySelector('select');
-
-// Add change event listener
-select.addEventListener('change', (event) => {
-
-  // Get and trim option value
-  let selectedValue = event.target.value.trim(); 
-  
-  // Sanitize option value
-  selectedValue = selectedValue.replace(/\W/g, '');
-
-  // Query DOM for element with class matching value 
-  const element = document.querySelector(`.${selectedValue}`);
-
-  // If match found, show it
-  if (element) {
-    element.style.display = 'block';
-  }
-
-});
-
+	var spans = document.querySelectorAll('.li span'); // Select all spans with class 'li'
+	
+	// Add click event listener to each span
+	spans.forEach(function(span) {
+	  span.addEventListener('click', function() {
+		var parentLi = this.closest('.li'); // Find the closest parent with class 'li'
+		var mainSelectSpan = parentLi.querySelector('.bv_mainselect'); // Find the span with class 'bv_mainselect' inside parent 'li'
+		var clickedSpanContent = this.innerHTML; // Get the content of the clicked span
+		
+		// Replace the content of 'bv_mainselect' span with clicked span's content
+		mainSelectSpan.innerHTML = clickedSpanContent;
+	  });
+	});
