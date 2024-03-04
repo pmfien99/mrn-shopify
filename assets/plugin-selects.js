@@ -501,6 +501,7 @@ window.onload = function() {
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('text')) {
 		var initialElement = document.getElementById('initial-text')
+		initialElement.innerText = event.target.innerText;
         var innerText = event.target.innerText;
         var elementsToReplace = document.getElementsByClassName('variant-replace');
             elementsToReplace[i].innerText = innerText;
