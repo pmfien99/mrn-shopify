@@ -474,27 +474,6 @@ class BVSelect {
 		}
 	}
 }
-window.onload = function() {
-	const select = document.querySelector('select');
-	
-	select.addEventListener('change', (event) => {
-		const selectedOption = event.target.selectedOptions[0];
-		
-		if (selectedOption.classList.contains('listening')) {
-			selectedOption.innerText = 'Text to be replaced';
-		}
-	});
-};
-
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('text')) {
-        var innerText = event.target.innerText;
-        var elementsToReplace = document.getElementsByClassName('variant-replace');
-            elementsToReplace[i].innerText = innerText;
-    }
-});
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const selectItems = document.querySelectorAll('.li a');
 
@@ -505,7 +484,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const selectedImage = document.querySelector('.bv_selected .img img');
             const sourceAttribute = selectedImage.getAttribute('src');
             
-            console.log(sourceAttribute); // Log the source attribute to the console
+            // Set the background image of the desired element to the source attribute
+            const slInnerElement = document.querySelector('.sl_inner');
+            slInnerElement.style.backgroundImage = `url(${sourceAttribute})`;
         });
     });
 });
