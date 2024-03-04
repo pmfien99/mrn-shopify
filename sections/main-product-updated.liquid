@@ -136,10 +136,7 @@ padding-left: 50px;
 
 {%- for variant in product.variants -%}
   
-  <span class="
-    {% unless forloop.first %}displayNone{% endunless %}
-    {{variant.id}}
-    ">
+  <span class="{{variant.id}} variant-option-display">
     {{ variant.option1 }}
   </span>
 
@@ -147,8 +144,8 @@ padding-left: 50px;
 <li>{{ option.value }}</li>
 
           <style>
-          .displayNone {
-          display: none;
+          .variant-option-display:first-of-type {
+          display: block;
         }
           </style>
             {%- if product.metafields.reviews.rating and title_block.settings.show_product_rating -%}
