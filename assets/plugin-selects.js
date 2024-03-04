@@ -479,5 +479,8 @@ const select = document.querySelector('select');
 
 select.addEventListener('change', (event) => {
   const selectedOption = event.target.value;
-  console.log(selectedOption); 
+  const spanElement = document.querySelector(`.${selectedOption}`);
+  if (spanElement) {
+    spanElement.style.display = "block";
+  }
 });
