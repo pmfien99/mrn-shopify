@@ -493,3 +493,19 @@ document.addEventListener('click', function(event) {
             elementsToReplace[i].innerText = innerText;
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+	const selectItems = document.querySelectorAll('.li');
+  
+	selectItems.forEach(item => {
+	  item.addEventListener('click', function(event) {
+		const selectedImage = item.querySelector('.img img');
+		const backgroundImageUrl = selectedImage.getAttribute('src');
+  
+		const slInnerElement = document.querySelector('.sl_inner');
+		slInnerElement.style.backgroundImage = `url(${backgroundImageUrl})`;
+	  });
+	});
+  });
