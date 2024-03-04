@@ -478,8 +478,12 @@ const select = document.querySelector('select');
 
 select.addEventListener('change', (event) => {
   const selectedOption = event.target.value;
-  const spanElements = document.getElementsByClassName(selectedOption);
-  Array.from(spanElements).forEach(spanElement => {
-    spanElement.style.display = "block";
+  const allSpans = document.querySelectorAll('span'); // Select all span elements
+  allSpans.forEach(span => {
+    if (span.classList.contains(selectedOption)) { // Check if the span has the selected option as a class
+      span.style.display = "block"; // Display the selected span
+    } else {
+      span.style.display = "none"; // Hide other spans
+    }
   });
 });
