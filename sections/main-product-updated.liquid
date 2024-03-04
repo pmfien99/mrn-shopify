@@ -123,7 +123,7 @@ padding-left: 50px;
   
           // Apply the specified CSS rule to the targeted element
           targetedElement.style.display = 'flex';
-          targetedElement.style.flexDirection = 'row-reverse'; 
+          targetedElement.style.flexDirection = 'row-reverse';
       }
   });
   
@@ -133,6 +133,8 @@ padding-left: 50px;
     <header {{ title_block.shopify_attributes }} class="class-x">
         <ul id="overRideH1Width" class="l4dr m15">
           <{{ title_size }} class="m5{% if settings.product_titles_caps %} text-uppercase{% endif %}{% if title_classes %} {{ title_classes }}{% endif %}">{{ product.title }}</{{ title_size }}>
+
+
           {% if product.options.size == 1 %} <{{ product.options.first }}>{{ variant.option1 }}</{{ product.options.first }}> % else %} <{{ product.options.first }}>{{ variant.option1 }}</{{ product.options.first }}> <{{ product.options[1] }}>{{ variant.option2 }}</{{ product.options[1] }}> {% endif %}
             {%- if product.metafields.reviews.rating and title_block.settings.show_product_rating -%}
                 <li class="overlay-gray">
