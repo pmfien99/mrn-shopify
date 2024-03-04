@@ -474,7 +474,17 @@ class BVSelect {
 		}
 	}
 }
-
+window.onload = function() {
+	const select = document.querySelector('select');
+	
+	select.addEventListener('change', (event) => {
+		const selectedOption = event.target.selectedOptions[0];
+		
+		if (selectedOption.classList.contains('listening')) {
+			selectedOption.innerText = 'Text to be replaced';
+		}
+	});
+};
 
 window.onload = function() {
 	const select = document.querySelector('select');
@@ -495,4 +505,3 @@ document.addEventListener('click', function(event) {
             elementsToReplace[i].innerText = innerText;
     }
 });
-
