@@ -474,16 +474,12 @@ class BVSelect {
 		}
 	}
 }
-const select = document.querySelector('select');
 
-select.addEventListener('change', (event) => {
-  const selectedOption = event.target.value;
-  const allSpans = document.querySelectorAll('span'); // Select all span elements
-  allSpans.forEach(span => {
-    if (span.classList.contains(selectedOption)) { // Check if the span has the selected option as a class
-      span.style.display = "block"; // Display the selected span
-    } else {
-      span.style.display = "none"; // Hide other spans
-    }
-  });
-});
+
+window.onload = function() {
+	// Get the inner text of the 'sl_inner' class
+	var innerText = document.querySelector('.sl_inner').innerText;
+	
+	// Replace the inner text of the 'variant-replace' class
+	document.querySelector('.variant-replace').innerText = innerText;
+};
