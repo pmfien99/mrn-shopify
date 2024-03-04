@@ -496,17 +496,17 @@ document.addEventListener('click', function(event) {
 
 
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var spanLiElements = document.querySelectorAll('span.li');
+document.addEventListener('DOMContentLoaded', function() {
+    var selectElements = document.querySelectorAll('.select');
 
-        spanLiElements.forEach(function(spanLi) {
-            spanLi.addEventListener('click', function(event) {
-                var imageElement = spanLi.querySelector('img');
+    selectElements.forEach(function(selectElement) {
+        selectElement.addEventListener('click', function(event) {
+            var imgElements = selectElement.querySelectorAll('.img img');
 
-                if (imageElement) {
-                    var imageSource = imageElement.src;
-                    console.log('Image Source:', imageSource);
-                }
+            imgElements.forEach(function(imgElement) {
+                var imageSource = imgElement.src;
+                console.log('Image Source:', imageSource);
             });
         });
     });
+});
