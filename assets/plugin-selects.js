@@ -475,11 +475,14 @@ class BVSelect {
 	}
 }
 
-
 window.onload = function() {
-	// Get the inner text of the 'sl_inner' class
-	var innerText = document.querySelector('.sl_inner').innerText;
+	const select = document.querySelector('select');
 	
-	// Replace the inner text of the 'variant-replace' class
-	document.querySelector('.variant-replace').innerText = innerText;
+	select.addEventListener('change', (event) => {
+		// Get the inner text of the 'sl_inner' class
+		var innerText = document.querySelector('.sl_inner').innerText;
+		
+		// Replace the inner text of the 'variant-replace' class
+		document.querySelector('.variant-replace').innerText = innerText;
+	});
 };
