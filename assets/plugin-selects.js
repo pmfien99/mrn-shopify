@@ -432,7 +432,7 @@ class BVSelect {
 					if (selectorIndex.getAttribute("onchange") != null) {
 						document.querySelector(this.selector).onchange()
 					}
-					document.getElementById("main_" + this.randomID).innerHTML = '<span class="sl_inner">' + selectorIndex[i].innerText + "</span> <i id='arrow_" + this.randomID + "' class='arrows_bv arrow down'></i>"
+					document.getElementById("main_" + this.randomID).innerHTML = '<span class="sl_inner `i++`">' + selectorIndex[i].innerText + "</span> <i id='arrow_" + this.randomID + "' class='arrows_bv arrow down'></i>"
 				}
 			}
 		}
