@@ -484,7 +484,7 @@ select.addEventListener('change', (event) => {
   selectedValue = selectedValue.replace(/[^a-zA-Z0-9]/g, '');
 
   // Use sanitized value
-  document.querySelector(`.${selectedValue}`).style.display = 'block'; 
+  document.querySelector(`span.${selectedValue}`).style.display = 'block'; 
 });
 
 
