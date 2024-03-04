@@ -485,3 +485,13 @@ window.onload = function() {
 		}
 	});
 };
+
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('text')) {
+        var innerText = event.target.innerText;
+        var elementsToReplace = document.getElementsByClassName('variant-replace');
+        for (var i = 0; i < elementsToReplace.length; i++) {
+            elementsToReplace[i].innerText = innerText;
+        }
+    }
+});
