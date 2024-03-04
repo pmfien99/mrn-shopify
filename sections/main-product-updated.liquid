@@ -274,11 +274,7 @@ padding-left: 50px;
 
         <div class="new-title-pro-wrapper">
           <h1 class="new-title-pro-mobile">{{ product.title }}</h1>
-          {% for product_option in product.options_with_values %}
-            {%- for value in product_option.values -%}
-                <{{ product_option.name }} class="selection-{{forloop.index }}">{{value}}</{{ product_option.name }}>
-            {%- endfor -%}
-        {% endfor %}
+<span class="sl_inner"></span>
         </div>
     </div>
 
