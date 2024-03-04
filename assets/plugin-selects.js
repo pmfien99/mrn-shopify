@@ -478,16 +478,10 @@ window.onload = function() {
 	const select = document.querySelector('select');
 	
 	select.addEventListener('change', (event) => {
-		// Get the selected option
-		const selectedOption = event.target.value;
+		const selectedOption = event.target.selectedOptions[0];
 		
-		// Get the inner text of the selected option
-		const innerText = event.target.selectedOptions[0].innerText;
-		
-		// If the selected option has the class 'listening'
-		if (event.target.selectedOptions[0].classList.contains('listening')) {
-			// Replace the inner text of the selected option with 'Text to be replaced'
-			event.target.selectedOptions[0].innerText = 'Text to be replaced';
+		if (selectedOption.classList.contains('listening')) {
+			selectedOption.innerText = 'Text to be replaced';
 		}
 	});
 };
