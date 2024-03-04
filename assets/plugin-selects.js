@@ -478,6 +478,7 @@ class BVSelect {
 const select = document.querySelector('select');
 
 select.addEventListener('change', (event) => {
-  const selectedOption = event.target.value;
-  console.log(selectedOption); 
-});
+  const selectedValue = event.target.value;
+  
+  document.querySelector(`.${selectedValue}`).style.display = 'block';
+}); 
