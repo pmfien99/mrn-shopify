@@ -135,7 +135,7 @@ padding-left: 50px;
           <{{ title_size }} class="m5{% if settings.product_titles_caps %} text-uppercase{% endif %}{% if title_classes %} {{ title_classes }}{% endif %}">{{ product.title }}</{{ title_size }}>
 
 {%- for variant in product.variants -%}
-  {{ variant.option1 }}
+  <span class="variant-display-{{forloop.index}}">{{ variant.option1 }}</span>
 {%- endfor -%}
           
             {%- if product.metafields.reviews.rating and title_block.settings.show_product_rating -%}
