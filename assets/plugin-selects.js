@@ -474,17 +474,23 @@ class BVSelect {
 		}
 	}
 }
-document.addEventListener("DOMContentLoaded", function() {
-    const selectItems = document.querySelectorAll('.li a');
+window.onload = function() {
+	const select = document.querySelector('select');
+	
+	select.addEventListener('change', (event) => {
+		const selectedOption = event.target.selectedOptions[0];
+		
+		if (selectedOption.classList.contains('listening')) {
+			selectedOption.innerText = 'Text to be replaced';
+		}
+	});
+};
 
-    selectItems.forEach(item => {
-        item.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default link behavior
-            
-            const selectedImage = document.querySelector('.bv_selected .img img');
-            const sourceAttribute = selectedImage.getAttribute('src');
-            
-            console.log(sourceAttribute); // Log the source attribute to the console
-        });
-    });
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('text')) {
+        var innerText = event.target.innerText;
+        var elementsToReplace = document.getElementsByClassName('variant-replace');
+            elementsToReplace[i].innerText = innerText;
+    }
 });
+
