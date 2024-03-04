@@ -494,3 +494,27 @@ document.addEventListener('click', function(event) {
     }
 });
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all span.li elements
+    var spanLiElements = document.querySelectorAll('span.li');
+
+    // Loop through each span.li element
+    spanLiElements.forEach(function(spanLi) {
+        // Add a click event listener to each span.li element
+        spanLi.addEventListener('click', function(event) {
+            // Find the image element within the clicked span.li element
+            var imageElement = spanLi.querySelector('img');
+            
+            // If an image element is found
+            if (imageElement) {
+                // Get the source (src) of the image
+                var imageSource = imageElement.src;
+                
+                // Log the image source to the console
+                console.log('Image Source:', imageSource);
+            }
+        });
+    });
+});
