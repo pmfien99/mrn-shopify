@@ -475,16 +475,11 @@ class BVSelect {
 	}
 }
 
-	var spans = document.querySelectorAll('.li span'); // Select all spans with class 'li'
-	
-	// Add click event listener to each span
-	spans.forEach(function(span) {
-	  span.addEventListener('click', function() {
-		var parentLi = this.closest('.li'); // Find the closest parent with class 'li'
-		var mainSelectSpan = parentLi.querySelector('.bv_mainselect'); // Find the span with class 'bv_mainselect' inside parent 'li'
-		var clickedSpanContent = this.innerHTML; // Get the content of the clicked span
-		
-		// Replace the content of 'bv_mainselect' span with clicked span's content
-		mainSelectSpan.innerHTML = clickedSpanContent;
-	  });
-	});
+document.addEventListener('click', function(e) {
+	if (e.target.classList.contains('li')) {
+	  const mainSelect = document.querySelector('.bv_mainselect');
+	  const clickedSpan = e.target;
+	  
+	  mainSelect.parentNode.replaceChild(clickedSpan, mainSelect);
+	}
+  });
