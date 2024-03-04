@@ -474,11 +474,10 @@ class BVSelect {
 		}
 	}
 }
-document.addEventListener('click', function(e) {
-	if (e.target.classList.contains('li')) {
-	  const mainSelect = document.querySelector('.bv_mainselect');
-	  const clickedSpan = e.target;
-	  
-	  mainSelect.parentNode.replaceChild(clickedSpan, mainSelect);
-	}
-  });
+
+const select = document.querySelector('select');
+
+select.addEventListener('change', (event) => {
+  const selectedOption = event.target.value;
+  console.log(selectedOption); 
+});
