@@ -134,8 +134,10 @@ padding-left: 50px;
         <ul id="overRideH1Width" class="l4dr m15">
           <{{ title_size }} class="m5{% if settings.product_titles_caps %} text-uppercase{% endif %}{% if title_classes %} {{ title_classes }}{% endif %}">{{ product.title }}</{{ title_size }}>
 
-
-          {% if product.options.size == 1 %} <{{ product.options.first }}>{{ variant.option1 }}</{{ product.options.first }}> % else %} <{{ product.options.first }}>{{ variant.option1 }}</{{ product.options.first }}> <{{ product.options[1] }}>{{ variant.option2 }}</{{ product.options[1] }}> {% endif %}
+{%- for variant in product.variants -%}
+  {{ variant.option1 }}
+{%- endfor -%}
+          
             {%- if product.metafields.reviews.rating and title_block.settings.show_product_rating -%}
                 <li class="overlay-gray">
                     <a href="#section-reviews" class="r6rt" data-val="{{ product.metafields.reviews.rating.value }}" data-of="5">
