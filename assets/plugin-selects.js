@@ -474,6 +474,8 @@ class BVSelect {
 		}
 	}
 }
+
+
 window.onload = function() {
 	const select = document.querySelector('select');
 	
@@ -493,6 +495,4 @@ document.addEventListener('click', function(event) {
             elementsToReplace[i].innerText = innerText;
     }
 });
-
-
 
