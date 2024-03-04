@@ -474,17 +474,6 @@ class BVSelect {
 		}
 	}
 }
-window.onload = function() {
-	const select = document.querySelector('select');
-	
-	select.addEventListener('change', (event) => {
-		const selectedOption = event.target.selectedOptions[0];
-		
-		if (selectedOption.classList.contains('listening')) {
-			selectedOption.innerText = 'Text to be replaced';
-		}
-	});
-};
 
 window.onload = function() {
 	const select = document.querySelector('select');
@@ -500,10 +489,11 @@ window.onload = function() {
 
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('text')) {
-		var initialElement = document.getElementById('initial-text')
-		initialElement.style.display = 'none';
         var innerText = event.target.innerText;
         var elementsToReplace = document.getElementsByClassName('variant-replace');
             elementsToReplace[i].innerText = innerText;
     }
 });
+
+
+
