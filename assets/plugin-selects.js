@@ -474,13 +474,11 @@ class BVSelect {
 		}
 	}
 }
-window.onload = function() {
-	document.addEventListener('click', function(e) {
-		if (e.target.classList.contains('li')) {
-		  const mainSelect = document.querySelector('.bv_mainselect');
-		  const clickedSpan = e.target;
-		  
-		  mainSelect.parentNode.replaceChild(clickedSpan, mainSelect);
-		}
-	  });
-  };
+document.addEventListener('click', function(e) {
+	if (e.target.classList.contains('li')) {
+	  const mainSelect = document.querySelector('.bv_mainselect');
+	  const clickedSpan = e.target;
+	  
+	  mainSelect.parentNode.replaceChild(clickedSpan, mainSelect);
+	}
+  });
