@@ -475,17 +475,25 @@ class BVSelect {
 	}
 }
 
+// Get select element 
 const select = document.querySelector('select');
 
+// Add change event listener
 select.addEventListener('change', (event) => {
 
-  // Sanitize option value 
-  let selectedValue = event.target.value;
-  selectedValue = selectedValue.replace(/[^a-zA-Z0-9]/g, '');
+  // Get and trim option value
+  let selectedValue = event.target.value.trim(); 
+  
+  // Sanitize option value
+  selectedValue = selectedValue.replace(/\W/g, '');
 
-  // Use sanitized value
-  document.querySelector(`span.${selectedValue}`).style.display = 'block'; 
+  // Query DOM for element with class matching value 
+  const element = document.querySelector(`.${selectedValue}`);
+
+  // If match found, show it
+  if (element) {
+    element.style.display = 'block';
+  }
+
 });
-
-
 
