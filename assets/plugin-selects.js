@@ -475,21 +475,32 @@ class BVSelect {
 	}
 }
 window.onload = function() {
-	const select = document.querySelector('select');
-	
-	select.addEventListener('change', (event) => {
-		const selectedOption = event.target.selectedOptions[0];
-		
-		if (selectedOption.classList.contains('listening')) {
-			selectedOption.innerText = 'Text to be replaced';
-		}
-	});
-};
+    const select = document.querySelector('select');
 
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('text')) {
-        var innerText = event.target.innerText;
-        var elementsToReplace = document.getElementsByClassName('variant-replace');
-            elementsToReplace[i].innerText = innerText;
-    }
-});
+    select.addEventListener('change', (event) => {
+        const selectedOption = event.target.selectedOptions[0];
+
+        if (selectedOption.classList.contains('listening')) {
+            selectedOption.innerText = 'Text to be replaced';
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('text')) {
+            // Access the nested span within the clicked element
+            var innerText = event.target.querySelector('span').innerText;
+            var elementsToReplace = document.getElementsByClassName('variant-replace');
+            for (var i = 0; i < elementsToReplace.length; i++) {
+                elementsToReplace[i].innerText = innerText;
+            }
+            
+            // Find the closest image element and log its source
+            var closestImage = event.target.closest('span').previousElementSibling;
+            if (closestImage && closestImage.tagName === 'IMG') {
+                console.log(closestImage.src);
+            } else {
+                console.log('No image found.');
+            }
+        }
+    });
+};
