@@ -38,6 +38,11 @@
             "show_tax": false
           }
         },
+        "judge_me_reviews_preview_badge_UdVC97": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
         "variant_selection": {
           "type": "variant_selection",
           "settings": {
@@ -89,6 +94,7 @@
         "c7259cb9-7235-4028-b6df-3a68077fed80",
         "short_description",
         "price",
+        "judge_me_reviews_preview_badge_UdVC97",
         "variant_selection",
         "90724a70-740a-4cc9-984c-764e1d76a5bd",
         "inventory",
