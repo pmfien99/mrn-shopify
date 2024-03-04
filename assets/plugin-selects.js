@@ -474,18 +474,12 @@ class BVSelect {
 		}
 	}
 }
-
 const select = document.querySelector('select');
 
 select.addEventListener('change', (event) => {
   const selectedOption = event.target.value;
-
-  const spans = document.getElementsByTagName('span');
-  
-  for (let span of spans) {
-    if (span.classList.contains(selectedOption)) {
-      span.style.display = 'block';
-      break;
-    }
-  }
+  const spanElements = document.getElementsByClassName(selectedOption);
+  Array.from(spanElements).forEach(spanElement => {
+    spanElement.style.display = "block";
+  });
 });
