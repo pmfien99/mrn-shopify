@@ -135,9 +135,11 @@ padding-left: 50px;
           <{{ title_size }} class="m5{% if settings.product_titles_caps %} text-uppercase{% endif %}{% if title_classes %} {{ title_classes }}{% endif %}">{{ product.title }}</{{ title_size }}>
 
 {%- for variant in product.variants -%}
-  <span class="variant-display-{{forloop.index}}">{{ variant.option1 }}</span>
+  <span class="variant-display-{{variant.id}}">{{ variant.option1 }}</span>
 {%- endfor -%}
+          <style>
           
+          </style>
             {%- if product.metafields.reviews.rating and title_block.settings.show_product_rating -%}
                 <li class="overlay-gray">
                     <a href="#section-reviews" class="r6rt" data-val="{{ product.metafields.reviews.rating.value }}" data-of="5">
