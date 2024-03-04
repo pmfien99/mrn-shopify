@@ -501,6 +501,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
 	selectItems.forEach(item => {
 	  item.addEventListener('click', function(event) {
+		event.preventDefault(); // Prevent default link behavior
 		const selectedImage = item.querySelector('.img img');
 		const backgroundImageUrl = selectedImage.getAttribute('src');
   
