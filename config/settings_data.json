@@ -57,7 +57,7 @@
     "free_shipping_amount": 99,
     "product_deliverytime_in_stock": "",
     "product_deliverytime_not_in_stock": "",
-    "shipping_timer_show_until": "15:00",
+    "shipping_timer_show_until": "14:00",
     "shipping_timer_show_from": "01",
     "shipping_timer_enable_3": true,
     "whatsapp": 0,
