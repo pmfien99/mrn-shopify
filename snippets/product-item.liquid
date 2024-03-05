@@ -94,31 +94,33 @@
   {%- capture quick_buy -%}
     {%- if layout == 'list-compact' -%}
       {%- form 'product', product, id: product_form_id, class: product_form_class, novalidate: 'novalidate' -%}
-        <fieldset>
-          <input type="hidden" name="id" value="{{ current_variant.id }}">
-          <p class="submit">
-            {%- if enable_quick_buy_qty_selector -%}
-              <span class="input-amount">
-              <label for="quantity-{{ product_form_id }}" class="hidden">{{ 'product.form.quantity' | t }}</label>
-              <input type="number" id="quantity-{{ product_form_id }}" name="quantity" value="1"
-                  min="{{ current_variant.quantity_rule.min }}"
-                 {% if current_variant.inventory_management == 'shopify' and current_variant.inventory_policy == 'deny' -%}
-                   max="{{ current_variant.inventory_quantity }}"
-                 {% elsif current_variant.quantity_rule.max %}
-                   max="{{ current_variant.quantity_rule.max }}"
-                 {% endif %}
-                {% if current_variant.quantity_rule.step %}step="{{ current_variant.quantity_rule.step }}"{% endif %}
-                required>
-            </span>
-            {%- endif -%}
-            <button type="submit" class="overlay-tertiary{% if quick_buy_compact %} compact{% if layout == 'list' %} w160{% endif %}{% endif %}">
-              {%- unless quick_buy_compact -%}<span class="mobile-hide">{{ 'product.form.add_to_cart' | t }}</span>{%- endunless -%}
-              <i aria-hidden="true" class="icon-cart{% unless quick_buy_compact %} mobile-only{% endunless %}"></i>
-            </button>
+        {%- assign available_variants = product.variants | where: "available" -%}
+        {%- if enable_variant_picker and available_variants.size > 1 -%}
+          <p>
+            <select name="id" id="{{ product_form_id }}-id">
+              {%- for variant in product.variants -%}
+                {%- unless variant.available -%}{% continue %}{%- endunless -%}
+                {%- liquid
+                  if variant.featured_image
+                    assign product_image = variant.featured_image
+                   else
+                    assign product_image = product.featured_image
+                  endif
+                -%}
+                <option
+                  value="{{ variant.id }}"
+                  data-variantinfo='{ {% if product_image %}"image":"{%- if settings.fill_product_images -%}{{ product_image | image_url: width: image_width_2, height: image_height_2, crop: 'center' }}{%- else -%}{{ product_image | image_url: width: image_width_2, height: image_height_2, pad_color: 'fff' }}{%- endif -%}",{% endif %}"price_old":"{%- if variant.compare_at_price > variant.price -%}{{ variant.compare_at_price | money }}{%- endif -%}","price":"{{ variant.price | money }}"}'
+                  {% unless variant.available %}disabled data-class="disabled"{% endunless %}
+                  {% if variant == current_variant %}selected{% endif %}
+                >{{ variant.title }}</option>
+              {%- endfor -%}
+            </select>
           </p>
-        </fieldset>
+        {%- else -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}">
+        {%- endif -%}
+        <p class="submit"><button type="submit" class="overlay-tertiary"><i aria-hidden="true" class="icon-cart"></i> {{ 'product.form.add_to_cart' | t }}</button></p>
       {%- endform -%}
-      
     {%- elsif product.variants.size == 1 and current_variant.available and enable_quick_buy_drawer == false -%}
       {%- form 'product', product, id: product_form_id, class: product_form_class, novalidate: 'novalidate' -%}
         <fieldset>
