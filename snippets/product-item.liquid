@@ -151,7 +151,7 @@
       <p class="link-btn {% unless enable_quick_buy_mobile %}mobile-hide{% endunless %} {% unless enable_quick_buy_desktop %}mobile-only{% endunless %} {% if quick_buy_compact and layout == 'list' %} w160{% endif %}">
         <a class="overlay-tertiary" href="{{ product.url }}"{% if enable_quick_buy_drawer and product != blank %} data-quickshop{% endif %}>
           {%- if quick_buy_compact -%}
-            {{ 'product.form.view' | t }}
+            {{ 'product.form.view' | t }} test
           {%- else -%}
             {{ 'product.form.view_options' | t }}
           {%- endif -%}
