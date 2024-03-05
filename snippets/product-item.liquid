@@ -122,31 +122,15 @@
         <p class="submit"><button type="submit" class="overlay-tertiary"><i aria-hidden="true" class="icon-cart"></i> {{ 'product.form.add_to_cart' | t }}</button></p>
       {%- endform -%}
     {%- elsif product.variants.size == 1 and current_variant.available and enable_quick_buy_drawer == false -%}
-      {%- form 'product', product, id: product_form_id, class: product_form_class, novalidate: 'novalidate' -%}
-        <fieldset>
-          <input type="hidden" name="id" value="{{ current_variant.id }}">
-          <p class="submit">
-            {%- if enable_quick_buy_qty_selector -%}
-              <span class="input-amount">
-              <label for="quantity-{{ product_form_id }}" class="hidden">{{ 'product.form.quantity' | t }}</label>
-              <input type="number" id="quantity-{{ product_form_id }}" name="quantity" value="1"
-                  min="{{ current_variant.quantity_rule.min }}"
-                 {% if current_variant.inventory_management == 'shopify' and current_variant.inventory_policy == 'deny' -%}
-                   max="{{ current_variant.inventory_quantity }}"
-                 {% elsif current_variant.quantity_rule.max %}
-                   max="{{ current_variant.quantity_rule.max }}"
-                 {% endif %}
-                {% if current_variant.quantity_rule.step %}step="{{ current_variant.quantity_rule.step }}"{% endif %}
-                required>
-            </span>
-            {%- endif -%}
-            <button type="submit" class="overlay-tertiary{% if quick_buy_compact %} compact{% if layout == 'list' %} w160{% endif %}{% endif %}">
-              {%- unless quick_buy_compact -%}<span class="mobile-hide">{{ 'product.form.add_to_cart' | t }}</span>{%- endunless -%}
-              <i aria-hidden="true" class="icon-cart{% unless quick_buy_compact %} mobile-only{% endunless %}"></i>
-            </button>
-          </p>
-        </fieldset>
-      {%- endform -%}
+    <p class="link-btn {% unless enable_quick_buy_mobile %}mobile-hide{% endunless %} {% unless enable_quick_buy_desktop %}mobile-only{% endunless %} {% if quick_buy_compact and layout == 'list' %} w160{% endif %}">
+      <a class="overlay-tertiary" href="{{ product.url }}"{% if enable_quick_buy_drawer and product != blank %} data-quickshop{% endif %}>
+        {%- if quick_buy_compact -%}
+          {{ 'product.form.view' | t }}
+        {%- else -%}
+          {{ 'product.form.view_options' | t }}
+        {%- endif -%}
+      </a>
+    </p>
     {%- else -%}
       <p class="link-btn {% unless enable_quick_buy_mobile %}mobile-hide{% endunless %} {% unless enable_quick_buy_desktop %}mobile-only{% endunless %} {% if quick_buy_compact and layout == 'list' %} w160{% endif %}">
         <a class="overlay-tertiary" href="{{ product.url }}"{% if enable_quick_buy_drawer and product != blank %} data-quickshop{% endif %}>
