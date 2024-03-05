@@ -36,7 +36,7 @@
           "type": "text",
           "settings": {
             "title": "Information",
-            "text": "<p><a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Terms & Conditions<\/a><\/p><p><a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">Privacy Policy<\/a><\/p><p><a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">Refund Policy<\/a><\/p>"
+            "text": "<p><a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Terms & Conditions<\/a><\/p><p><a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">Privacy Policy<\/a><\/p><p><a href=\"\/policies\/shipping-policy\" title=\"Shipping Policy\">Shipping & Returns<\/a><\/p>"
           }
         }
       },
