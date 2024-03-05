@@ -42,9 +42,10 @@
         "423fb7f6-2c97-4420-8211-d45378349d2a"
       ],
       "settings": {
-        "pagination_qty": 24,
+        "pagination_qty": 48,
         "pagination_type": "button",
         "show_amount_of_products_in_collection": true,
+        "enable_break_out_varients": true,
         "productview_type": "grid",
         "products_per_row": 3,
         "show_collection_image": true,
