@@ -140,10 +140,10 @@
                 required>
             </span>
             {%- endif -%}
-            <p class="link-btn   ">
-              <a class="overlay-tertiary" href="/products/daily-pump-stim-free-pre-workout?pr_prod_strat=e5_desc&amp;pr_rec_id=f3e16dcb3&amp;pr_rec_pid=8887257235752&amp;pr_ref_pid=8892642328872&amp;pr_seq=uniform">View Now
-      </a>
-            </p>
+            <button type="submit" class="overlay-tertiary{% if quick_buy_compact %} compact{% if layout == 'list' %} w160{% endif %}{% endif %}">
+              {%- unless quick_buy_compact -%}<span class="mobile-hide">{{ 'product.form.add_to_cart' | t }}</span>{%- endunless -%}
+              <i aria-hidden="true" class="icon-cart{% unless quick_buy_compact %} mobile-only{% endunless %}"></i>
+            </button>
           </p>
         </fieldset>
       {%- endform -%}
