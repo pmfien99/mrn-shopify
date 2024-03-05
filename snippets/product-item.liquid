@@ -119,6 +119,7 @@
         {%- else -%}
           <input type="hidden" name="id" value="{{ current_variant.id }}">
         {%- endif -%}
+        <p class="submit"><button type="submit" class="overlay-tertiary"><i aria-hidden="true" class="icon-cart"></i> {{ 'product.form.add_to_cart' | t }}</button></p>
       {%- endform -%}
     {%- elsif product.variants.size == 1 and current_variant.available and enable_quick_buy_drawer == false -%}
       {%- form 'product', product, id: product_form_id, class: product_form_class, novalidate: 'novalidate' -%}
