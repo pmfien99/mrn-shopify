@@ -1,4 +1,4 @@
-<section style="background-color:{{ section.settings.background_color }};">
+<section class="custom-background-banner-section" style="background-color:{{ section.settings.background_color }};">
     <div class="banner-container">
 
 {%- assign desktop_image = section.settings.desktop_image -%}
@@ -29,7 +29,12 @@ place-items: center;
             .mobile-banner-image {
             display: block;
             }
-          }
+
+            .custom-background-banner-section {
+              width: 102vw;
+              transform: translateX(-5vw);
+            }
+
       }
 </style>
 
