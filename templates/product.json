@@ -189,7 +189,7 @@
         "title": "More You May Like",
         "enable_quick_buy_desktop": true,
         "enable_quick_buy_mobile": true,
-        "enable_quick_buy_drawer": true,
+        "enable_quick_buy_drawer": false,
         "enable_quick_buy_qty_selector": false,
         "enable_color_picker": false,
         "enable_quick_buy_compact": false,
